@@ -6,12 +6,11 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/19 11:25:14 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/19 13:02:26 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/19 13:12:24 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
-#include "Weapon.hpp"
 
 HumanB::HumanB(std::string name)
 {
