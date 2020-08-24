@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/23 16:52:56 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/24 09:26:40 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/24 17:14:52 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		main()
 	Fixed	b(a);
 	Fixed	c;
 
-	c = b; // calls assignation operator
+	c = b;
 
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
