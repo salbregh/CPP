@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/23 17:00:57 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/23 19:16:15 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/24 09:00:28 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Fixed::Fixed(void): _n(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	std::cout << "Vaue of _n: " << this->_n << std::endl;
+	// std::cout << "Vaue of _n: " << this->_n << std::endl;
 	return ;
 }
 
@@ -27,15 +27,22 @@ Fixed::Fixed(Fixed const & src)
 	return ;
 }
 
-// int		Fixed::getRawBits(void) const
-// {
-	
-// }
+int		Fixed::getRawBits(void) const
+{
+	// returns the raw value of the fixed point value
+	std::cout << "getRawBits member function called" << std::endl;
+	return (this->_n);
+}
+
+void	Fixed::setRawBits(int const raw)
+{
+	_n = raw;
+}
 
 Fixed& Fixed::operator=(Fixed const & src)
 {
-	std::cout << "Assignation operator called from " << this->_n << std::endl;
 	this->_n = src._n;
+	std::cout << "Assignation operator called from " << this->_n << std::endl;
 	return (*this);
 }
 

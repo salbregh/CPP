@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/23 16:56:35 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/23 19:13:07 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/24 09:01:26 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	Fixed
 		int					_n;
 		// static constant integer to store the number of fractional bits,
 		// this constant will always be the litteral 8
-		static const int	_bit;
+		static const int	_bit = 8;
 
 	public:
 		// default constructor that initializes the fixed point value to 0
@@ -33,9 +33,9 @@ class	Fixed
 		// an assignation operator overload
 		Fixed &	operator=(Fixed const & rhs);
 		// member function int getRawBits(void) const; that returns the raw value of the fixed point value
-		int	getRawBits(void)const;
+		int		getRawBits(void)const;
 		// member function void setRawBits(inst const raw); that sets the raw value of the fixed point value
-		int	setRawBits(int const raw);
+		void	setRawBits(int const raw);
 };
 
 
