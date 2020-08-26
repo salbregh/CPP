@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/25 10:08:20 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/25 12:36:47 by salbregh      ########   odam.nl         */
+/*   Created: 2020/08/26 15:58:24 by salbregh      #+#    #+#                 */
+/*   Updated: 2020/08/26 15:58:26 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,24 @@ FragTrap::FragTrap(FragTrap const &src)
 	return ;
 }
 
-// // assignation operator overload
-// FragTrap&	FragTrap::operator=(FragTrap const &rhs)
-// {
-// 	std::cout << "Assignation operator called" << std::endl;
-// 	std::cout << "To " << rhs.getValue() << std::endl;
-//	this->_n = rhs.getValue();
-// 	return (*this);
-// }
+// assignation operator overload
+FragTrap&	FragTrap::operator=(FragTrap const &rhs)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	if (this != &rhs)
+	{
+		_name = rhs._name;
+		_armorDamageReduction = rhs._armorDamageReduction;
+		_energyPoints = rhs._energyPoints;
+		_hitPoints = rhs._hitPoints;
+		_level = rhs._level;
+		_maxEnergyPoints = rhs._maxEnergyPoints;
+		_maxHitPoints = rhs._maxHitPoints;
+		_meleeAttackDamage = rhs._meleeAttackDamage;
+		_rangesAttackDamage = rhs._rangesAttackDamage;
+	}
+	return (*this);
+}
 
 void		FragTrap::rangedAttack(std::string const & target)
 {
