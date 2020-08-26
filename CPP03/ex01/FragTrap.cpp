@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 15:58:24 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/26 18:23:58 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/26 19:06:47 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ FragTrap::FragTrap(std::string name): _name(name)
 // copy constructor
 FragTrap::FragTrap(FragTrap const &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor FragTrap called" << std::endl;
 	*this = src;
 	return ;
 }

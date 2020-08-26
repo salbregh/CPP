@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   FragTrap.hpp                                       :+:    :+:            */
+/*   ScavTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/25 08:02:09 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/26 16:35:25 by salbregh      ########   odam.nl         */
+/*   Created: 2020/08/26 18:25:37 by salbregh      #+#    #+#                 */
+/*   Updated: 2020/08/26 19:12:49 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_H
-# define FRAGTRAP_H
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
 # include <iostream>
 
-class	FragTrap
+class		ScavTrap
 {
 	private:
 		std::string		_name;
@@ -28,15 +28,15 @@ class	FragTrap
 		unsigned int	_armorDamageReduction;
 	
 	public:
-		FragTrap(std::string name);
-		~FragTrap(void);
-		FragTrap(FragTrap const &src);
-		FragTrap&	operator=(FragTrap const &rhs);
+		ScavTrap(std::string name);
+		~ScavTrap(void);
+		ScavTrap(ScavTrap const &src);
+		ScavTrap&	operator=(ScavTrap const &rhs);
 		void		rangedAttack(std::string const & target);
 		void		meleeAttack(std::string const & target);
 		int			takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount); // should this also repair energy points?
-		void		vaulthunter_dot_exe(std::string const & target);
+		void		beRepaired(unsigned int amount);
+		void		challengeNewcomer(void);
 };
 
 #endif
