@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 08:02:09 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/25 11:11:34 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/26 15:02:47 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class	FragTrap
 		// copy constructor
 		FragTrap(FragTrap const &src);
 		// assignation operator overload
-		// FragTrap&	operator=(FragTrap const &rhs);
+		FragTrap&	operator=(FragTrap const &rhs);
 		void		rangedAttack(std::string const & target);
 		void		meleeAttack(std::string const & target);
 		int			takeDamage(unsigned int amount);
