@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/23 17:00:57 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/24 17:10:18 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/25 10:29:31 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void	Fixed::setRawBits(int const raw)
 	_n = raw;
 }
 
-Fixed& Fixed::operator=(Fixed const & src)
+Fixed& Fixed::operator=(Fixed const & rhs)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	this->_n = src._n;
+	this->_n = rhs._n;
 	return (*this);
 }
 

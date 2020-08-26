@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 09:36:13 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/24 21:21:08 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/25 07:51:23 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,3 +80,8 @@ std::ostream&	operator<<(std::ostream& out, const Fixed& i)
 	out << i.toFloat();
 	return out;
 }
+
+
+/* 
+** https://www.interviewcake.com/concept/java/bit-shift
+*/

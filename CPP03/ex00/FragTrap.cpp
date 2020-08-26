@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 10:08:20 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/25 11:47:15 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/25 12:36:47 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ FragTrap::FragTrap(FragTrap const &src)
 
 void		FragTrap::rangedAttack(std::string const & target)
 {
-	// takeDamage() 20 points of damage
 	if (takeDamage(_rangesAttackDamage - _armorDamageReduction) == 1)
 	{
 		std::cout << "FR4G-TP <" << this->_name << "> attacks <" << target << "> at range, causing " << _rangesAttackDamage - _armorDamageReduction << " points of damage!" << std::endl;
@@ -70,7 +69,6 @@ void		FragTrap::rangedAttack(std::string const & target)
 
 void		FragTrap::meleeAttack(std::string const & target)
 {
-	// takeDamage() 30
 	if (takeDamage(_meleeAttackDamage - _armorDamageReduction) == 1)
 	{
 		std::cout << "FR4G-TP <" << this->_name << "> attacks <" << target << "> at range, causing " << _meleeAttackDamage - _armorDamageReduction << " points of damage!" << std::endl;
