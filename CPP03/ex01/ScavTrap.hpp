@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/26 18:25:37 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/26 19:12:49 by salbregh      ########   odam.nl         */
+/*   Created: 2020/08/25 08:02:09 by salbregh      #+#    #+#                 */
+/*   Updated: 2020/08/28 14:47:24 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SCAVTRAP_H
 # include <iostream>
 
-class		ScavTrap
+class	ScavTrap
 {
 	private:
 		std::string		_name;

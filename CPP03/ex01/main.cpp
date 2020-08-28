@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 10:16:36 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/26 19:21:33 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 15:24:39 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,30 @@ int		main()
 	srand((unsigned) time(0));
 	// for the random attack function
 	
-	FragTrap Test1("ONE");
+	FragTrap Frag1("FRAG");
 	ScavTrap Scav1("SCAV");
-	FragTrap Test2("TWO");
 
-	// try to repare when at 100
-	Test1.beRepaired(10);
+	// // try to repare when at 100
+	Frag1.beRepaired(10);
 	Scav1.beRepaired(20);
 
-	Test1.rangedAttack("TWO");
-	Test2.takeDamage(20);
+	Scav1.rangedAttack("FRAG");
+	// takes 20 - armourreduction 5 points of damage so HP should be 85
+	Frag1.takeDamage(20);
 	// add repare to more then 100
-	Test1.beRepaired(20);
-	Test1.meleeAttack("TARGET");
-	Test1.vaulthunter_dot_exe("TARGET");
+	Frag1.beRepaired(20);
+	Frag1.meleeAttack("TARGET");
+	Scav1.meleeAttack("TARGET");
 
 	
-	Test2.vaulthunter_dot_exe("TARGET");
-	Test2.vaulthunter_dot_exe("TARGET");
-	Test2.vaulthunter_dot_exe("TARGET");
-	Test2.vaulthunter_dot_exe("TARGET");
-	Test2.vaulthunter_dot_exe("TARGET");
+	Frag1.vaulthunter_dot_exe("TARGET");
+	Frag1.vaulthunter_dot_exe("TARGET");
+	Frag1.vaulthunter_dot_exe("TARGET");
+	Frag1.vaulthunter_dot_exe("TARGET");
+	Frag1.vaulthunter_dot_exe("TARGET");
 
 	Scav1.challengeNewcomer();
 	Scav1.challengeNewcomer();
 	Scav1.challengeNewcomer();
 	Scav1.challengeNewcomer();
-	
-
-	srand((unsigned) time(0));
 }

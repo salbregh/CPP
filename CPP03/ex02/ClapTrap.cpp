@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/27 17:30:55 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 12:13:22 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 15:31:02 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,16 @@ int			ClapTrap::takeDamage(unsigned int amount)
 void		ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_hitPoints == _maxHitPoints)
-		std::cout << "Couldn't be repaired HP already at the maximum" << std::endl;
+		std::cout << this->_name << " couldn't be repaired HP already at the maximum" << std::endl;
 	else if (_hitPoints + amount >= _maxHitPoints)
 	{
 		_hitPoints = _maxHitPoints;
-		std::cout << "HP repaired to: " << _hitPoints << std::endl;
+		std::cout << this->_name << "'s HP repaired to: " << _hitPoints << std::endl;
 	}
 	else
 	{
 		_hitPoints = _hitPoints + amount;
-		std::cout << "HP repaired to: " << _hitPoints << std::endl;
+		std::cout << this->_name << "'s HP repaired to: " << _hitPoints << std::endl;
 	}
 }
 

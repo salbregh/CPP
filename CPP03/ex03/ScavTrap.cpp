@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 18:58:04 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 12:15:24 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 15:35:13 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ ScavTrap::ScavTrap(std::string name)
 	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl << std::endl;
 }
 
-// copy constructor
 ScavTrap::ScavTrap(ScavTrap const &src)
 {
 	std::cout << "Copy constructor ScavTrap called" << std::endl;
@@ -68,5 +67,5 @@ ScavTrap::~ScavTrap(void)
 	std::cout << "Destructor SCAVTRAP called, deleted: " << this->_name << std::endl;
 	std::cout << "END VALUES OF " << this->_name << std::endl;
 	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
-	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl <<std::endl;
+	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl;
 }

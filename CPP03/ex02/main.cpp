@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 10:16:36 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 11:39:44 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 15:30:37 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,4 @@ int		main()
 	Scav1.challengeNewcomer();
 	Scav1.challengeNewcomer();
 	Scav1.challengeNewcomer();
-
-
-	srand((unsigned) time(0));
 }

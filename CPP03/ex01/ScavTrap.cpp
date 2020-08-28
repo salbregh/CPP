@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 18:58:04 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 11:40:34 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 15:35:41 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ ScavTrap::ScavTrap(std::string name): _name(name)
 	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl << std::endl;
 }
 
-// copy constructor
 ScavTrap::ScavTrap(ScavTrap const &src)
 {
 	std::cout << "Copy constructor ScavTrap called" << std::endl;
@@ -86,17 +85,16 @@ int			ScavTrap::takeDamage(unsigned int amount)
 void		ScavTrap::beRepaired(unsigned int amount)
 {
 	if (_hitPoints == _maxHitPoints)
-		std::cout << "Couldn't repaire scav, HP already at the maximum" << std::endl << std::endl;
+		std::cout << this->_name << " couldn't be repaired HP already at the maximum" << std::endl;
 	else if (_hitPoints + amount >= _maxHitPoints)
 	{
 		_hitPoints = _maxHitPoints;
-		std::cout << "HP scav repaired to: " << _hitPoints << std::endl;
+		std::cout << this->_name << "'s HP scav repaired to: " << _hitPoints << std::endl;
 	}
 	else
 	{
 		_hitPoints = _hitPoints + amount;
-		std::cout << "HP scav repaired to: " << _hitPoints << std::endl;
-		std::cout << std::endl;
+		std::cout << this->_name << "'s HP scav repaired to: " << _hitPoints << std::endl;
 	}
 }
 
@@ -112,5 +110,5 @@ ScavTrap::~ScavTrap(void)
 	std::cout << "Destructor ScavTrap called, deleted: " << this->_name << std::endl;
 	std::cout << "END VALUES OF " << this->_name << std::endl;
 	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
-	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl <<std::endl;
+	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl;
 }

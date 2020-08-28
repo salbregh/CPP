@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 15:58:24 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 12:16:06 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 15:35:25 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ FragTrap::FragTrap(std::string name)
 	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl << std::endl;
 }
 
-// copy constructor
 FragTrap::FragTrap(FragTrap const &src)
 {
 	std::cout << "Copy constructor FragTrap called" << std::endl;
@@ -63,15 +62,13 @@ void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 	if (_energyPoints < 25)
 	{
 		std::cout << "Not enough energy points for attack" << std::endl;
-		std::cout << "EP is: " << _energyPoints << std::endl;
-		std::cout << std::endl;
+		std::cout << this->_name << "'s EP is: " << _energyPoints << std::endl;
 	}
 	else
 	{
 		_energyPoints -= 25;
 		std::cout << "Random attack by " << this->_name << " : " << attacks[nb] << " done on " << target << std::endl;
-		std::cout << "EP is: " << _energyPoints << std::endl;
-		std::cout << std::endl;
+		std::cout << this->_name << "'s EP is: " << _energyPoints << std::endl;
 	}
 }
 
@@ -80,5 +77,5 @@ FragTrap::~FragTrap(void)
 	std::cout << "Destructor called, deleted: " << this->_name << std::endl;
 	std::cout << "END VALUES OF " << this->_name << std::endl;
 	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
-	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl <<std::endl;
+	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl;
 }

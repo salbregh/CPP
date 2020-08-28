@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 08:02:09 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/26 16:35:25 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 14:35:34 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class	FragTrap
 		void		rangedAttack(std::string const & target);
 		void		meleeAttack(std::string const & target);
 		int			takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount); // should this also repair energy points?
+		void		beRepaired(unsigned int amount);
 		void		vaulthunter_dot_exe(std::string const & target);
 };
 

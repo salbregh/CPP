@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 15:58:24 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 11:40:10 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 15:35:53 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ FragTrap::FragTrap(std::string name): _name(name)
 	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl << std::endl;
 }
 
-// copy constructor
 FragTrap::FragTrap(FragTrap const &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
@@ -56,12 +55,14 @@ FragTrap&	FragTrap::operator=(FragTrap const &rhs)
 
 void		FragTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "FRAGTRAP " << this->_name << " attacks " << target << " at range, causing " << _rangesAttackDamage << " points of damage!" << std::endl;
+	std::cout << "FRAGTRAP " << this->_name << " attacks " << target << " at range, causing "
+	<< _rangesAttackDamage << " points of damage!" << std::endl;
 }
 
 void		FragTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "FRAGTRAP " << this->_name << " attacks " << target << " with melee attack, causing " << _meleeAttackDamage << " points of damage!" << std::endl;
+	std::cout << "FRAGTRAP " << this->_name << " attacks " << target << " with melee attack, causing "
+	<< _meleeAttackDamage << " points of damage!" << std::endl;
 }
 
 int			FragTrap::takeDamage(unsigned int amount)
@@ -86,17 +87,16 @@ int			FragTrap::takeDamage(unsigned int amount)
 void		FragTrap::beRepaired(unsigned int amount)
 {
 	if (_hitPoints == _maxHitPoints)
-		std::cout << "Couldn't be repaired HP already at the maximum" << std::endl << std::endl;
+		std::cout << "Couldn't be repaired, " <<this->_name << "'s HP already at the maximum" << std::endl;
 	else if (_hitPoints + amount >= _maxHitPoints)
 	{
 		_hitPoints = _maxHitPoints;
-		std::cout << "HP repaired to: " << _hitPoints << std::endl;
+		std::cout << this->_name << "'s HP repaired to: " << _hitPoints << std::endl;
 	}
 	else
 	{
 		_hitPoints = _hitPoints + amount;
-		std::cout << "HP repaired to: " << _hitPoints << std::endl;
-		std::cout << std::endl;
+		std::cout << this->_name << "'s HP repaired to: " << _hitPoints << std::endl;
 	}
 }
 
@@ -107,15 +107,13 @@ void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 	if (_energyPoints < 25)
 	{
 		std::cout << "Not enough energy points for attack" << std::endl;
-		std::cout << "EP is: " << _energyPoints << std::endl;
-		std::cout << std::endl;
+		std::cout << this->_name << "'s EP is: " << _energyPoints << std::endl;
 	}
 	else
 	{
 		_energyPoints -= 25;
 		std::cout << "Random attack: " << attacks[nb] << " done on " << target << std::endl;
-		std::cout << "EP is: " << _energyPoints << std::endl;
-		std::cout << std::endl;
+		std::cout << this->_name <<"'s EP is: " << _energyPoints << std::endl;
 	}
 }
 
@@ -124,5 +122,5 @@ FragTrap::~FragTrap(void)
 	std::cout << "Destructor FRAGTRAP called, deleted: " << this->_name << std::endl;
 	std::cout << "END VALUES OF " << this->_name << std::endl;
 	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
-	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl <<std::endl;
+	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl;
 }
