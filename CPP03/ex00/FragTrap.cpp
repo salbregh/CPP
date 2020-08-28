@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 15:58:24 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/26 18:23:58 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/27 17:45:31 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(std::string name): _name(name)
 {
-	std::cout << "Constructor called, made: " << this->_name << std::endl;
+	std::cout << "Constructor FRAGTRAP called, made: " << this->_name << std::endl;
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
 	this->_energyPoints = 100;
@@ -56,12 +56,12 @@ FragTrap&	FragTrap::operator=(FragTrap const &rhs)
 
 void		FragTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at range, causing " << _rangesAttackDamage << " points of damage!" << std::endl;
+	std::cout << "FRAGTRAP " << this->_name << " attacks " << target << " at range, causing " << _rangesAttackDamage << " points of damage!" << std::endl;
 }
 
 void		FragTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " with melee attack, causing " << _meleeAttackDamage << " points of damage!" << std::endl;
+	std::cout << "FRAGTRAP " << this->_name << " attacks " << target << " with melee attack, causing " << _meleeAttackDamage << " points of damage!" << std::endl;
 }
 
 int			FragTrap::takeDamage(unsigned int amount)
@@ -116,7 +116,7 @@ void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "Destructor called, deleted: " << this->_name << std::endl;
+	std::cout << "Destructor FRAGTRAP called, deleted: " << this->_name << std::endl;
 	std::cout << "END VALUES OF " << this->_name << std::endl;
 	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
 	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl <<std::endl;

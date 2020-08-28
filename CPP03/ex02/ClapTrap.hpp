@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 19:33:15 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/26 19:37:30 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 10:31:45 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,20 @@
 
 class		ClapTrap
 {
-	private:
+	public:
+		ClapTrap(void);
+		ClapTrap(ClapTrap const &src);
+		~ClapTrap(void);
+		ClapTrap&	operator=(ClapTrap const &rhs);
+		void		rangedAttack(std::string const & target);
+		void		meleeAttack(std::string const & target);
+		int			takeDamage(unsigned int amount);
+		void		beRepaired(unsigned int amount);
+
+
+	protected:
 		std::string		_name;
+		std::string		_classname;
 		unsigned int	_hitPoints;
 		unsigned int	_maxHitPoints;
 		unsigned int 	_energyPoints;
