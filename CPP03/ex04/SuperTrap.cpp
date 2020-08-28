@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.cpp                                       :+:    :+:            */
+/*   SuperTrap.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/26 18:58:04 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 19:06:42 by salbregh      ########   odam.nl         */
+/*   Created: 2020/08/28 18:02:35 by salbregh      #+#    #+#                 */
+/*   Updated: 2020/08/28 19:00:27 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "SuperTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name)
+SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name)
 {
-	std::cout << "SCAVTRAP made: " << this->_name << std::endl;
+	std::cout << "Constructor SUPERTRAP called" << std::endl;
+	this->_classname = "SuperTrap";
 	this->_name = name;
-	this->_classname = "ScavTrap";
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
-	this->_energyPoints = 50;
-	this->_maxEnergyPoints = 50;
-	this->_meleeAttackDamage = 20;
-	this->_rangesAttackDamage = 15;
-	this->_armorDamageReduction = 3;
+	this->_energyPoints = 120;
+	this->_maxEnergyPoints = 120;
+	this->_meleeAttackDamage = 60;
+	this->_rangesAttackDamage = 20;
+	this->_armorDamageReduction = 5;
 	this->_level = 1;
 	std::cout << "START VALUES OF " << this->_name << std::endl;
 	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
 	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl << std::endl;
+	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src)
+SuperTrap::SuperTrap(SuperTrap const &src) : FragTrap(src), NinjaTrap(src)  
 {
-	std::cout << "Copy constructor ScavTrap called" << std::endl;
+	std::cout << "Copy constructor SuperTrap called" << std::endl;
 	*this = src;
 	return ;
 }
 
-ScavTrap&	ScavTrap::operator=(ScavTrap const &rhs)
+SuperTrap&	SuperTrap::operator=(SuperTrap const &rhs)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &rhs)
@@ -55,17 +56,7 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const &rhs)
 	return (*this);
 }
 
-void		ScavTrap::challengeNewcomer(void)
+SuperTrap::~SuperTrap(void)
 {
-	std::string challenge[5] = {"challenge1", "challenge2", "challenge3", "challenge4", "challenge5"};
-	int			nb = rand() % 5;
-	std::cout << "Challenge: " << challenge[nb] << std::endl;
-}
-
-ScavTrap::~ScavTrap(void)
-{
-	std::cout << "Destructor SCAVTRAP called, deleted: " << this->_name << std::endl;
-	std::cout << "END VALUES OF " << this->_name << std::endl;
-	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
-	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl;
+	std::cout << "Destructor SUPERTRAP called" << std::endl;
 }

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   FragTrap.hpp                                       :+:    :+:            */
+/*   SuperTrap.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/25 08:02:09 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 18:49:14 by salbregh      ########   odam.nl         */
+/*   Created: 2020/08/28 17:59:01 by salbregh      #+#    #+#                 */
+/*   Updated: 2020/08/28 18:37:51 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_H
-# define FRAGTRAP_H
-# include <iostream>
+#ifndef SUPERTRAP_H
+# define SUPERTRAP_H
+# include "FragTrap.hpp"
+# include "NinjaTrap.hpp"
 # include "ClapTrap.hpp"
 
-class	FragTrap : public virtual ClapTrap
-{	
+class	SuperTrap :  public FragTrap, public NinjaTrap
+{
 	public:
-		FragTrap(std::string name);
-		~FragTrap(void);
-		FragTrap(FragTrap const &src);
-		FragTrap&	operator=(FragTrap const &rhs);
-		void		vaulthunter_dot_exe(std::string const & target);
+		SuperTrap(std::string name);
+		~SuperTrap(void);
+		SuperTrap(SuperTrap const &src);
+		SuperTrap&	operator=(SuperTrap const &rhs);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/28 11:48:23 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 16:55:44 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 18:15:19 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class	NinjaTrap : public ClapTrap
+class	NinjaTrap : virtual public ClapTrap
 {
 	public:
 		NinjaTrap(std::string name);

@@ -6,13 +6,14 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 10:16:36 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 17:54:07 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 19:01:48 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int		main()
 {
@@ -22,6 +23,10 @@ int		main()
 	FragTrap 	Frag1("FRAG");
 	ScavTrap 	Scav1("SCAV");
 	NinjaTrap 	Ninja("NINJA");
+	SuperTrap	Super("SUPER");
+	
+	Super.ninjaShoebox(Frag1);
+	Super.vaulthunter_dot_exe("TARGET");
 
 	Ninja.ninjaShoebox(Frag1);
 	Ninja.ninjaShoebox(Scav1);
