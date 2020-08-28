@@ -6,15 +6,17 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 18:58:04 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 11:40:34 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 12:15:24 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name): _name(name)
+ScavTrap::ScavTrap(std::string name)
 {
-	std::cout << "ScavTrap made: " << this->_name << std::endl;
+	std::cout << "SCAVTRAP made: " << this->_name << std::endl;
+	this->_name = name;
+	this->_classname = "ScavTrap";
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
 	this->_energyPoints = 50;
@@ -54,52 +56,6 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const &rhs)
 	return (*this);
 }
 
-void		ScavTrap::rangedAttack(std::string const & target)
-{
-	std::cout << "SCAV " << this->_name << " attacks " << target << " at range, causing " << _rangesAttackDamage << " points of damage!" << std::endl;
-}
-
-void		ScavTrap::meleeAttack(std::string const & target)
-{
-	std::cout << "SCAV " << this->_name << " attacks " << target << " with melee attack, causing " << _meleeAttackDamage << " points of damage!" << std::endl;
-}
-
-int			ScavTrap::takeDamage(unsigned int amount)
-{
-	std::cout << this->_name << " takes damage" << std::endl;
-	if (_hitPoints == 0)
-	{
-		std::cout << this->_name << "'s HP already at 0" << std::endl;
-		return (0);
-	}
-	else
-	{
-		if (_hitPoints > (amount - _armorDamageReduction))
-			_hitPoints = (_hitPoints - (amount - _armorDamageReduction));
-		else
-			_hitPoints = 0;
-	}
-	std::cout << this->_name << "'s HP is now: " << this->_hitPoints << std::endl;
-	return (0);
-}
-
-void		ScavTrap::beRepaired(unsigned int amount)
-{
-	if (_hitPoints == _maxHitPoints)
-		std::cout << "Couldn't repaire scav, HP already at the maximum" << std::endl << std::endl;
-	else if (_hitPoints + amount >= _maxHitPoints)
-	{
-		_hitPoints = _maxHitPoints;
-		std::cout << "HP scav repaired to: " << _hitPoints << std::endl;
-	}
-	else
-	{
-		_hitPoints = _hitPoints + amount;
-		std::cout << "HP scav repaired to: " << _hitPoints << std::endl;
-		std::cout << std::endl;
-	}
-}
-
 void		ScavTrap::challengeNewcomer(void)
 {
 	std::string challenge[5] = {"challenge1", "challenge2", "challenge3", "challenge4", "challenge5"};
@@ -109,7 +65,7 @@ void		ScavTrap::challengeNewcomer(void)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "Destructor ScavTrap called, deleted: " << this->_name << std::endl;
+	std::cout << "Destructor SCAVTRAP called, deleted: " << this->_name << std::endl;
 	std::cout << "END VALUES OF " << this->_name << std::endl;
 	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
 	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl <<std::endl;

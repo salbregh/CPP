@@ -1,9 +1,0 @@
-// default constructor
-// destructor
-// copy constructor
-// assignation operator overload
-
-// how to call the constructor of its parent
-// how to make sure that the destructors are called for both classes
-// saying that the cat inherents from the animal, means that the
-// cat has an animal part, he can be more than an animal

@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 18:25:37 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 10:43:26 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 12:14:02 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class		ScavTrap : public ClapTrap
 		ScavTrap(std::string name);
 		~ScavTrap(void);
 		ScavTrap(ScavTrap const &src);
+		ScavTrap&	operator=(ScavTrap const &rhs);
 		void		challengeNewcomer(void);
 };
 

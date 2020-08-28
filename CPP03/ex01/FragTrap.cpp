@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 15:58:24 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/26 19:06:47 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/28 11:40:22 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,16 +66,21 @@ void		FragTrap::meleeAttack(std::string const & target)
 
 int			FragTrap::takeDamage(unsigned int amount)
 {
+	std::cout << this->_name << " takes damage" << std::endl;
 	if (_hitPoints == 0)
+	{
+		std::cout << this->_name << "'s HP already at 0" << std::endl;
 		return (0);
+	}
 	else
 	{
-		if (_hitPoints > amount)
-			_hitPoints = _hitPoints - amount;
+		if (_hitPoints > (amount - _armorDamageReduction))
+			_hitPoints = (_hitPoints - (amount - _armorDamageReduction));
 		else
 			_hitPoints = 0;
 	}
-	return (1);
+	std::cout << this->_name << "'s HP is now: " << this->_hitPoints << std::endl;
+	return (0);
 }
 
 void		FragTrap::beRepaired(unsigned int amount)
