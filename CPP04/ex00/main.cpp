@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 07:55:50 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/31 13:59:05 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/31 14:07:34 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int		main()
 	std::cout << robert << jim << joe;
 	
 	robert.polymorph(jim);
-	// Jimmy has been turned into a cute little sheep!
 	robert.polymorph(joe);
-	// Joe has been turned into a pink pony!
 	return (0);
 }
