@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 10:16:36 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 17:54:07 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/08/31 14:17:12 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		main()
 	Ninja.ninjaShoebox(Scav1);
 	Ninja.ninjaShoebox(Ninja);
 
-	// // try to repare when at 100
+	// try to repare when at 100
 	Frag1.beRepaired(10);
 	Scav1.beRepaired(20);
 
