@@ -6,15 +6,14 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:12:07 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/01 14:18:42 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/02 22:49:10 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon(std::string const &name) : _name(name)
+AWeapon::AWeapon(void)
 {
-	// std::cout ?
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 09:55:08 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/31 12:32:16 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/02 22:34:05 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ Victim::Victim(std::string name): _name(name)
 	std::cout << "Some random victim called " << this->_name
 	<< " just appeared!" << std::endl;
 	this->_name = name;
+	return ;
+}
+
+Victim::Victim(void)
+{
 	return ;
 }
 
@@ -54,6 +59,3 @@ std::ostream& operator<<(std::ostream &out, const Victim &rhs)
 	out << "I am " << rhs.getName() << ", and I like otters!" << std::endl;
 	return (out);
 }
-
-// void	getPolymorphed() const 
-// AME have been turned into a cute little sheep

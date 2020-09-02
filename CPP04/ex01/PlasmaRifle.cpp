@@ -6,13 +6,13 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:20:45 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/01 14:21:34 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/02 22:48:37 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PlasmaRifle.hpp"
 
-PlasmaRifle::PlasmaRifle(void) : AWeapon(_name)
+PlasmaRifle::PlasmaRifle(void) : AWeapon()
 {
 	this->_name = "Plasma Rifle";
 	this->_damage = 21;

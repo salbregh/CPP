@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 09:06:55 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/31 13:46:20 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/02 22:09:09 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	Sorcerer
 
 	public:
 		Sorcerer(std::string name, std::string title);
+		Sorcerer(void);
 		~Sorcerer(void);
 		Sorcerer(Sorcerer const &src);
 		Sorcerer&	operator=(Sorcerer const &rhs);

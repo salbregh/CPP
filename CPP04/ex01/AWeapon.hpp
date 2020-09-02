@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:13:17 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/01 14:17:58 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/02 22:49:16 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	AWeapon
 		int				_damage;
 		
     public:
-		AWeapon(std::string const &name);
+		AWeapon(void);
 		AWeapon(std::string const &name, int apcost, int damage);
 		virtual ~ AWeapon(void);
 		AWeapon(AWeapon const &src);
