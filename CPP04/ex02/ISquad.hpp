@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PlasmaRifle.hpp                                    :+:    :+:            */
+/*   ISquad.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/31 17:21:00 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 14:00:46 by salbregh      ########   odam.nl         */
+/*   Created: 2020/09/02 17:40:44 by salbregh      #+#    #+#                 */
+/*   Updated: 2020/09/02 17:42:54 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_H
-# define PLASMARIFLE_H
-# include "AWeapon.hpp"
+#ifndef ISQUAD_H
+# define ISQUAD_H
 
-class	PlasmaRifle : public AWeapon
+class		ISquad
 {
-	private:
-		std::string		_name;
-		int				_apcost;
-		int				_damage;
-	
 	public:
-		PlasmaRifle(void);
-		~PlasmaRifle(void);
-		PlasmaRifle(PlasmaRifle const &src);
-		PlasmaRifle&	operator=(PlasmaRifle const &rhs);
-		void	attack(void) const;
+		virtual ~ISquad() {}
+		virtual	int getCount() const = 0;
+		virtual	ISpaceMarine* geUnit(int) const = 0;
+		virtual	int push(ISpaceMarine* /* name */) = 0; 
 };
 
 #endif

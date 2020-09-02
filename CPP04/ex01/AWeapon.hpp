@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Aweapon.hpp                                        :+:    :+:            */
+/*   AWeapon.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:13:17 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/01 14:17:58 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/02 16:01:11 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	AWeapon
     public:
 		AWeapon(std::string const &name);
 		AWeapon(std::string const &name, int apcost, int damage);
-		virtual ~ AWeapon(void);
+		virtual ~AWeapon(void);
 		AWeapon(AWeapon const &src);
 		AWeapon&		operator=(AWeapon const &rhs);
 		std::string		getName(void) const;
