@@ -6,17 +6,17 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:20:45 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 22:52:30 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/02 23:06:13 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PlasmaRifle.hpp"
 
-PlasmaRifle::PlasmaRifle(void) : AWeapon()
+PlasmaRifle::PlasmaRifle(void) : AWeapon("Plasma Rifle", 21, 5)
 {
-	this->_name = "Plasma Rifle";
-	this->_damage = 21;
-	this->_apcost = 5;
+	// this->_name = "Plasma Rifle";
+	// this->_damage = 21;
+	// this->_apcost = 5;
 	// std::cout ?
 }
 
@@ -26,7 +26,7 @@ PlasmaRifle::~PlasmaRifle(void)
 	return ;
 }
 
-PlasmaRifle::PlasmaRifle(PlasmaRifle const &src) : AWeapon(src)
+PlasmaRifle::PlasmaRifle(PlasmaRifle const &src)
 {
 	*this = src;
 	return ;

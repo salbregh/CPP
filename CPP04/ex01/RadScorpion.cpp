@@ -6,13 +6,13 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:22:07 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 16:51:50 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/02 22:57:44 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RadScorpion.hpp"
 
-RadScorpion::RadScorpion(void) : Enemy()
+RadScorpion::RadScorpion(void)
 {
     this->_hp = 80;
     this->_type = "RadScorpion";
@@ -26,7 +26,7 @@ RadScorpion::~RadScorpion(void)
     return ;
 }
 
-RadScorpion::RadScorpion(RadScorpion const &src) : Enemy(src)
+RadScorpion::RadScorpion(RadScorpion const &src)
 {
     *this = src;
     return ;

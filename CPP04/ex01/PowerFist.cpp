@@ -6,13 +6,13 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:21:18 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 14:00:28 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/02 23:07:36 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PowerFist.hpp"
 
-PowerFist::PowerFist(void) : AWeapon(_name)
+PowerFist::PowerFist(void) : AWeapon("Power Fist", 50, 8)
 {
 	this->_name = "Power Fist";
 	this->_damage = 50;

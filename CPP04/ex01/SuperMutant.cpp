@@ -6,13 +6,13 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:22:44 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 16:48:44 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/02 22:59:00 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperMutant.hpp"
 
-SuperMutant::SuperMutant(void) : Enemy()
+SuperMutant::SuperMutant(void)
 {
     this->_hp = 170;
     this->_type = "Super Mutant";
@@ -26,7 +26,7 @@ SuperMutant::~SuperMutant(void)
     return ;
 }
 
-SuperMutant::SuperMutant(SuperMutant const &src) : Enemy(src)
+SuperMutant::SuperMutant(SuperMutant const &src)
 {
     *this = src;
     return ;
@@ -44,5 +44,5 @@ SuperMutant&    SuperMutant::operator=(SuperMutant const &rhs)
 
 void            SuperMutant::takeDamage(int)
 {
-    // overload damage to take 3 less damage points than nrmal
+    // overload damage to take 3 less damage points than normal
 }
