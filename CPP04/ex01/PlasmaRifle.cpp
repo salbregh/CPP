@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:20:45 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 22:48:37 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/02 22:52:30 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ PlasmaRifle&	PlasmaRifle::operator=(PlasmaRifle const &rhs)
 	return (*this);
 }
 
-	// 	virtual	void	attack(void);
-
-// ◦ Output of attack(): "* piouuu piouuu piouuu *"
+void			PlasmaRifle::attack(void) const
+{
+	std::cout << "* piouuu piouuu piouuu *" << std::endl;
+}
