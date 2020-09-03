@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 09:28:32 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/24 17:53:05 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/03 21:20:12 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		main()
 {
-	Fixed		a; // starts at 0
+	Fixed		a;
 	Fixed const	b(10);
 	Fixed const	c(42.42f);
 	Fixed const	d(b); // copy constructor
