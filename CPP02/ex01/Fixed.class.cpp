@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 09:36:13 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/03 21:20:39 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/03 22:01:52 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ Fixed::~Fixed(void)
 	return ;
 }
 
-Fixed::Fixed(const int value)
+Fixed::Fixed(const int i)
 {
-	this->_n = value << _bit; 
+	this->_n = i << _bit; 
 	// bitshift 8 to the left = _n * 2^8 (256)
 	std::cout << "Int constructor called" << std::endl;
 }

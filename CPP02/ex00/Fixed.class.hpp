@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/23 16:56:35 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/03 20:30:15 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/03 22:01:34 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class	Fixed
 	public:
 		Fixed(void);
 		~Fixed(void);
-		Fixed(Fixed const & src);
-		Fixed&	operator=(Fixed const & rhs);
+		Fixed(Fixed const &src);
+		Fixed&	operator=(Fixed const &rhs);
 		int		getRawBits(void)const;
 		void	setRawBits(int const raw);
 };

@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 09:36:43 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/03 20:47:20 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/03 22:01:22 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class	Fixed
 		Fixed(Fixed const &src);
         Fixed(const int i);
         Fixed(const float f);
-		Fixed &	operator=(Fixed const & rhs);
+		Fixed&	operator=(Fixed const &rhs);
 		int		getRawBits(void)const;
 		void	setRawBits(int const raw);
         float	toFloat(void)const;
