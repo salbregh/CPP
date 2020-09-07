@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:16:20 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 16:45:02 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/07 13:52:37 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ class	Enemy
 
 	public:
 		Enemy(void);
-		Enemy(int hp, std::string const& type);
+		Enemy(int hp, std::string const &type);
 		virtual ~Enemy(void);
 		Enemy(Enemy const &src);
 		Enemy&			operator=(Enemy const &rhs);
 		std::string		getType(void) const;
 		int				getHP(void) const;	
-		virtual void	takeDamage(int);
+		virtual void	takeDamage(int damage);
 };
 
 #endif

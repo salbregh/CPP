@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:22:07 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 22:57:44 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/07 14:15:36 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,3 @@ RadScorpion&    RadScorpion::operator=(RadScorpion const &rhs)
 	return (*this) ;
 }
 
-void            RadScorpion::takeDamage(int)
-{
-    // same function
-}

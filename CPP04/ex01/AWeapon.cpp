@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Aweapon.cpp                                        :+:    :+:            */
+/*   AWeapon.cpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:12:07 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 22:49:10 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/07 14:54:33 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ AWeapon::AWeapon(void)
 
 AWeapon::AWeapon(std::string const &name, int apcost, int damage): _name(name), _apcost(apcost), _damage(damage)
 {
-	// std::cout? 
 	return ;
 }
 
 AWeapon::~AWeapon(void)
 {
-	// std::cout ?
 	return ;
 }
 
@@ -51,7 +49,7 @@ std::string		AWeapon::getName(void) const
 	return (this->_name);
 }
 
-int				AWeapon::getAPcost(void) const
+int				AWeapon::getAPCost(void) const
 {
 	return (this->_apcost);
 }
@@ -59,10 +57,4 @@ int				AWeapon::getAPcost(void) const
 int				AWeapon::getDamage(void) const
 {
 	return (this->_damage);
-}
-
-void			AWeapon::attack(void) const
-{
-	// send the correct message from each function
-	return ;
 }

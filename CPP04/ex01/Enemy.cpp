@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:14:20 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 16:44:53 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/07 15:10:52 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ Enemy::Enemy(void)
 
 Enemy::Enemy(int hp, std::string const& type): _hp(hp), _type(type)
 {
-	// std::cout?
 	return ;
 }
 
 Enemy::~Enemy(void)
 {
-	// std::cout
 	return ;
 }
 
@@ -55,7 +53,15 @@ int			Enemy::getHP(void) const
 	return (this->_hp);
 }
 
-void		Enemy::takeDamage(int)
+void		Enemy::takeDamage(int damage)
 {
-	// dunno
+	if (damage <= 0)
+		return ;
+	else
+	{
+		if ((this->_hp - damage) < 0)
+			this->_hp = 0;
+		else
+			this->_hp = this->_hp - damage;
+	}
 }

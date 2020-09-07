@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 11:23:09 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 22:18:05 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/04 17:47:50 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,18 @@ Peon::Peon(void)
 	return ;
 }
 
-Peon::Peon(std::string name) //: Victim(name)
+
+/*
+** peon constructor is called, compiler looks it we ask
+** for a particular Base class constructor, this one is 
+** called, and its constructor is executed, then the derived
+** class constructor is executed
+** so first: Random victim called ... appeared
+** then: Zog Zog
+** first destructor of peon class, then destructor of victim class
+*/
+
+Peon::Peon(std::string name) : Victim(name)
 {
 	std::cout << "Zog zog." << std::endl;
 	this->_name = name;
@@ -30,7 +41,7 @@ Peon::~Peon(void)
 	return ;
 }
 
-Peon::Peon(Peon const &src) //: Victim(src)
+Peon::Peon(Peon const &src) : Victim(src)
 {
 	*this = src;
 	return ;
@@ -40,8 +51,6 @@ Peon&	Peon::operator=(Peon const &rhs)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &rhs)
-	{
 		_name = rhs._name;
-	}
 	return (*this);
 }

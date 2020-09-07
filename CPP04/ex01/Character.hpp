@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:14:00 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 22:54:31 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/06 17:45:43 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class	Character
 	private:
 		std::string		_name;
 		int				_ap;
+		AWeapon*		_weapon;
 
 	public:
 		Character(std::string const & name);
@@ -32,7 +33,8 @@ class	Character
 		void		equip(AWeapon* weapon);
 		void		attack(Enemy* enemy);
 		std::string	getName(void) const;
-		int			getAP(void) const;	
+		int			getAP(void) const;
+		AWeapon*	getWeapon(void) const;
 };
 
 std::ostream& operator<<(std::ostream &out, const Character &rhs);

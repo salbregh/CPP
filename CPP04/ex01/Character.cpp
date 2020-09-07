@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:13:46 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 17:27:05 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/07 15:07:16 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Character::Character(std::string const & name): _name(name)
 {
 	this->_ap = 40;
+	this->_weapon = NULL;
 	return ;
 }
 
@@ -40,28 +41,45 @@ Character&	Character::operator=(Character const &rhs)
 	{
 		this->_ap = rhs._ap;
 		this->_name = rhs._name;
+		this->_weapon = rhs._weapon;
 	}
 	return (*this);
 }
 
 void		Character::recoverAP(void)
 {
-	// als ap < 40 , add 10
-	// kan niet meer dan 40 zijn
-	// no AP no attack
+	this->_ap = this->_ap + 10;
+	if (this->_ap > 40)
+		this->_ap = 40;
 }
 
 void		Character::attack(Enemy *enemy)
 {
-	(void)enemy;
-	/// display NAME attacks ENEMY_TYPE with a WEAPONNAME
-	// followed by a call t the current ewaons attack() method
-	// if no equipped weapon attack() does nothing
+	if (this->_weapon == NULL || enemy == NULL)
+		return ;
+	if (this->_ap < _weapon->getAPCost())
+	{
+		// std::cout << _weapon->getAPCost();
+		std::cout << this->_name << " doenst have enough ap to attack." << std::endl;
+		return ;
+	}
+	std::cout << this->_name << " attacks " << enemy->getType() << " with a "
+	<< this->_weapon->getName() << std::endl;
+	this->_weapon->attack();
+	enemy->takeDamage(_weapon->getDamage());
+	this->_ap = this->_ap - this->_weapon->getAPCost();
+	if (this->_ap < 0)
+		this->_ap = 0;
+	if (enemy->getHP() <= 0)
+	{
+		delete enemy;
+		enemy = NULL;
+	}
 }
 
-void		Character::equip(AWeapon *weapon)
+void		Character::equip(AWeapon *wp)
 {
-	(void)weapon;
+	this->_weapon = wp;
 	// store a pointer to the weapon
 }
 
@@ -75,19 +93,16 @@ std::string	Character::getName(void) const
 	return (this->_name);
 }
 
-std::ostream& operator<<(std::ostream &out, const Character &rhs)
+AWeapon*	Character::getWeapon(void) const
 {
-	// if weapon
-	out << rhs.getName() << " has, " << rhs.getAP() << " and wields a " << std::endl; //<< getWeapon() << std::endl;
-	// else
-	// out << rhs.getName() << " has, " << rhs.getAP() << " and is unarmed." << std::endl;
-	return (out);
+	return (this->_weapon);
 }
 
-		// Character(const char &src);
-		// Character&	operator=(Character const &rhs);
-		// void		recoverAP(void);
-		// void		equid(AWeapon* weapon);
-		// void		attack(Enemy* enemy);
-		// std::string	getName(void) const;
-
+std::ostream& operator<<(std::ostream &out, const Character &rhs)
+{
+	if (rhs.getWeapon() == NULL)
+		out << rhs.getName() << " has, " << rhs.getAP() << " and is unarmed." << std::endl;
+	else
+		out << rhs.getName() << " has, " << rhs.getAP() << " and wields a " << rhs.getWeapon()->getName() << std::endl;
+	return (out);
+}

@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:17:09 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 23:10:18 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/07 15:03:40 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		main()
 	AWeapon*	pr = new PlasmaRifle();
 	AWeapon*	pf = new PowerFist();
 
-	me->equip(pf);
+	me->equip(pr);
 	std::cout << *me;
 	// me has 40 AP and wields a plasma rifle
 	me->equip(pf);

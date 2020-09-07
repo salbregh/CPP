@@ -6,27 +6,23 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:21:18 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 23:07:36 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/07 15:08:48 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PowerFist.hpp"
 
-PowerFist::PowerFist(void) : AWeapon("Power Fist", 50, 8)
+PowerFist::PowerFist(void) : AWeapon("Power Fist", 8, 50)
 {
-	this->_name = "Power Fist";
-	this->_damage = 50;
-	this->_apcost = 8;
-	// std::cout ?
+	return ;
 }
 
 PowerFist::~PowerFist(void)
 {
-	// std::cout ?
 	return ;
 }
 
-PowerFist::PowerFist(PowerFist const &src) : AWeapon(src)
+PowerFist::PowerFist(PowerFist const &src)
 {
 	*this = src;
 	return ;
@@ -43,7 +39,6 @@ PowerFist&	PowerFist::operator=(PowerFist const &rhs)
 	return (*this);
 }
 
-// check
 void			PowerFist::attack(void) const
 {
 	std::cout << "*pschhh... SBAM!*" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 17:22:56 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 16:19:29 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/07 14:18:25 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ class	SuperMutant : public Enemy
 {
 	public:
 		SuperMutant(void);
-		~SuperMutant(void);
+		virtual ~SuperMutant(void);
 		SuperMutant(SuperMutant const &src);
 		SuperMutant&	operator=(SuperMutant const &rhs);
-		void			takeDamage(int);
+		void			takeDamage(int damage);
 };
 
 #endif

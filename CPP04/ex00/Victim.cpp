@@ -6,22 +6,22 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 09:55:08 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/02 22:34:05 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/04 17:39:22 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Victim.hpp"
+
+Victim::Victim(void)
+{
+	return ;
+}
 
 Victim::Victim(std::string name): _name(name)
 {
 	std::cout << "Some random victim called " << this->_name
 	<< " just appeared!" << std::endl;
 	this->_name = name;
-	return ;
-}
-
-Victim::Victim(void)
-{
 	return ;
 }
 
