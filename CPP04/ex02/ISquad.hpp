@@ -6,13 +6,13 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 17:40:44 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/08 12:13:35 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/08 13:48:05 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ISQUAD_H
 # define ISQUAD_H
- # include "ISpaceMarine.hpp"
+# include "ISpaceMarine.hpp"
 
 class		ISquad
 {

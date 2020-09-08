@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/08 12:20:01 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/08 12:36:01 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/08 15:33:27 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ void			TacticalMarine::meleeAttack(void) const
 
 TacticalMarine::~TacticalMarine(void)
 {
-	std::cout << "Aaargh" << std::cout;
+	std::cout << "Aaargh" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/08 12:05:35 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/08 12:15:05 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/08 15:27:15 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,12 @@
 # define ASSAULTTERMINATOR_H
 # include "ISpaceMarine.hpp"
 
-// class	ISpaceMarine
-// {
-// 	public:
-// 		virtual	~ISpaceMarine() {}
-// 		virtual ISpaceMarine* clone() const = 0;
-// 		virtual void battleCry() const = 0;
-// 		virtual void rangedAttack() const = 0;
-// 		virtual void meleeAttack() const = 0;
-// }
-
 class		AssaultTerminator : public ISpaceMarine
 {
 	public:
-		virtual ~AssaultTerminator(void);
-		virtual ISpaceMarine clone() const;
+		AssaultTerminator(void);
+		~AssaultTerminator(void);
+		virtual ISpaceMarine* clone() const;
 		virtual void battleCry() const;
 		virtual void rangedAttack() const;
 		virtual void meleeAttack() const;
