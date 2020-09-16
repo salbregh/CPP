@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 08:02:09 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 14:47:24 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/16 17:29:03 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class	ScavTrap
 		unsigned int	_meleeAttackDamage;
 		unsigned int	_rangesAttackDamage;
 		unsigned int	_armorDamageReduction;
+		ScavTrap(void);
 	
 	public:
 		ScavTrap(std::string name);

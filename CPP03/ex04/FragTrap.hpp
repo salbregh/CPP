@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 08:02:09 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 18:49:14 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/16 17:32:31 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 class	FragTrap : public virtual ClapTrap
 {	
+	private:
+		FragTrap(void);
+		
 	public:
 		FragTrap(std::string name);
 		~FragTrap(void);

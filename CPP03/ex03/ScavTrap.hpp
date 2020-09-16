@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 18:25:37 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 12:14:02 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/16 17:31:44 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 class		ScavTrap : public ClapTrap 
 {	
+	private:
+		ScavTrap(void);
+		
 	public:
 		ScavTrap(std::string name);
 		~ScavTrap(void);
