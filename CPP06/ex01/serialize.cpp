@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 20:17:30 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/20 15:18:32 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/20 16:57:51 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	*serialize(void)
 	}
 	// std::cout << "CHECK S1 : " << s1 << std::endl;
 	int	n = randomInt();
-	memcpy(s1, &n, sizeof(n)); // memcopy to store int in char array
+	std::cout << n << std::endl;
+	memcpy(s1 + 8, &n, sizeof(n)); // memcopy to store int in char array
 	std::cout << n;
 	for (int i = 12; i < 20; i++)
 	{
