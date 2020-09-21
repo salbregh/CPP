@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 13:22:11 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/17 18:05:25 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/21 16:26:26 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ void	ft_convert_char(char* input)
     char character = input[0];
 	
     std::cout << "char: '" << std::fixed << character << "'"<< std::endl;
-    int integer = static_cast<int>(character);
-    std::cout << std::fixed << "int: " << integer << std::endl;
-    float floatvar = static_cast<float>(character);
-    std::cout << std::fixed << "float: " << floatvar << "f" << std::endl;
-    double doublevar = static_cast<double>(character);
-    std::cout << std::fixed << "double: " << doublevar << std::endl;
+    std::cout << std::fixed << "int: " << static_cast<int>(character) << std::endl;
+    std::cout << std::fixed << "float: " <<  static_cast<float>(character) << "f" << std::endl;
+    std::cout << std::fixed << "double: " << static_cast<double>(character) << std::endl;
 }

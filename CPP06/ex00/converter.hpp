@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 13:16:03 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/17 17:18:24 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/21 15:40:52 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define CONVERTER_H
 # include <iostream>
 # include <string>
+
+# define MAX_INT    std::numeric_limits<int>::max()
+# define MIN_INT    std::numeric_limits<int>::min()
+# define MAX_FLOAT  std::numeric_limits<float>::max()
+# define MIN_FLOAT  std::numeric_limits<float>::min()
+# define MAX_DOUBLE std::numeric_limits<double>::max()
+# define MIN_DOUBLE std::numeric_limits<double>::min()
 
 int		ft_check_char(std::string input);
 void	ft_convert_char(char* input);
