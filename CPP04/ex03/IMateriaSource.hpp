@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PlasmaRifle.hpp                                    :+:    :+:            */
+/*   IMateriaSource.hpp                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/31 17:21:00 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/09 13:02:16 by salbregh      ########   odam.nl         */
+/*   Created: 2020/09/09 15:21:26 by salbregh      #+#    #+#                 */
+/*   Updated: 2020/09/10 16:02:28 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_H
-# define PLASMARIFLE_H
-# include "AWeapon.hpp"
+#ifndef IMATERIASOURCE_H
+# define IMATERIASOURCE_H
+# include "AMateria.hpp"
 
-class	PlasmaRifle : public AWeapon
+class	IMateriaSource
 {
-	// private:
-	// 	std::string		_name;
-	// 	int				_apcost;
-	// 	int				_damage;
-	
 	public:
-		PlasmaRifle(void);
-		virtual ~PlasmaRifle(void);
-		PlasmaRifle(PlasmaRifle const &src);
-		PlasmaRifle&	operator=(PlasmaRifle const &rhs);
-		void	attack(void) const;
+		virtual ~IMateriaSource() {}
+		virtual void		learnMateria(AMateria* materia) = 0;
+		virtual AMateria*	createMateria(std::string const &type) = 0;
 };
 
 #endif

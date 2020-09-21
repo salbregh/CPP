@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/08 13:56:58 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/08 15:33:11 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/09 11:20:01 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ int				Squad::getCount(void) const
 {
 	int i = 0;
 	while (this->_array[i] != NULL)
-	{	
 		i++;
-	}
 	return i;
 }
 
@@ -47,9 +45,7 @@ ISpaceMarine*	Squad::getUnit(int N) const
 int				Squad::push(ISpaceMarine* spacemarine)
 {
 	int i = getCount();
-	std::cout << this->_array[i] << std::endl;
 	this->_array[i] = spacemarine;
-	std::cout << this->_array[i] << std::endl;
 	return 0;
 }
 

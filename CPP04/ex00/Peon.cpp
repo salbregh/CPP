@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 11:23:09 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/04 17:47:50 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/09 12:55:30 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ Peon::Peon(void)
 {
 	return ;
 }
-
 
 /*
 ** peon constructor is called, compiler looks it we ask

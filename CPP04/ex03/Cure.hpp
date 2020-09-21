@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PlasmaRifle.hpp                                    :+:    :+:            */
+/*   Cure.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/31 17:21:00 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/09 13:02:16 by salbregh      ########   odam.nl         */
+/*   Created: 2020/09/09 13:10:44 by salbregh      #+#    #+#                 */
+/*   Updated: 2020/09/10 15:59:24 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_H
-# define PLASMARIFLE_H
-# include "AWeapon.hpp"
+#ifndef CURE_H
+# define CURE_H
+# include "AMateria.hpp"
 
-class	PlasmaRifle : public AWeapon
+class	Cure : public AMateria
 {
-	// private:
-	// 	std::string		_name;
-	// 	int				_apcost;
-	// 	int				_damage;
-	
+	// prica xp ?
 	public:
-		PlasmaRifle(void);
-		virtual ~PlasmaRifle(void);
-		PlasmaRifle(PlasmaRifle const &src);
-		PlasmaRifle&	operator=(PlasmaRifle const &rhs);
-		void	attack(void) const;
-};
+		Cure(void);
+		virtual ~Cure(void);
+		Cure(Cure const &src);
+		Cure&	operator=(Cure const &rhs);
+		virtual Cure*	clone(void) const;
+		virtual void	use(ICharacter& target);
+};		
 
 #endif

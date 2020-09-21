@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/08 12:15:59 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/08 13:46:15 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/09 12:56:53 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,3 @@ AssaultTerminator::~AssaultTerminator(void)
 	std::cout << "I'll be back..." << std::endl;
 	return ;
 }
-
-
-
-// class		AssaultTerminator : public ISpaceMarine
-// {
-// 	public:
-// 		virtual ~AssaultTerminator(void);
-// 		virtual ISpaceMarine clone() const;
-// 		virtual void battleCry() const;
-// 		virtual void rangedAttack() const;
-// 		virtual void meleeAttack() const;
-// };

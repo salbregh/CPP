@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/08 12:20:01 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/08 15:33:27 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/09 11:19:03 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ TacticalMarine::TacticalMarine(void)
 
 void			TacticalMarine::battleCry(void) const
 {
-	std::cout << "For the holy PLOT!" << std::cout;
+	std::cout << "For the holy PLOT!" << std::endl;
 	return ;
 }
 

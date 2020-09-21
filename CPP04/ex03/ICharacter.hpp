@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PlasmaRifle.hpp                                    :+:    :+:            */
+/*   ICharacter.hpp                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/31 17:21:00 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/09 13:02:16 by salbregh      ########   odam.nl         */
+/*   Created: 2020/09/09 14:36:36 by salbregh      #+#    #+#                 */
+/*   Updated: 2020/09/09 15:12:59 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_H
-# define PLASMARIFLE_H
-# include "AWeapon.hpp"
+#ifndef ICHARACTER_H
+# define ICHARACTER_H
+# include <iostream>
+# include "AMateria.hpp"
 
-class	PlasmaRifle : public AWeapon
+class	AMateria;
+
+class	ICharacter
 {
-	// private:
-	// 	std::string		_name;
-	// 	int				_apcost;
-	// 	int				_damage;
-	
 	public:
-		PlasmaRifle(void);
-		virtual ~PlasmaRifle(void);
-		PlasmaRifle(PlasmaRifle const &src);
-		PlasmaRifle&	operator=(PlasmaRifle const &rhs);
-		void	attack(void) const;
+		virtual ~ICharacter() {}
+		virtual	std::string const& getName() const = 0;
+		virtual void 				equip(AMateria* m) = 0;
+		virtual void				unequip(int idx) = 0;
+		virtual void				use(int idx, ICharacter& target) = 0;
 };
 
 #endif
