@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 13:24:32 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/21 17:55:45 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/22 17:02:46 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	ft_convert_int(char* input)
 {
 	std::cout.precision(1);
 	int 		integer = std::atoi(input);
-	long double		lng = std::atol(input);
-
-	if (!(lng <= MAX_DOUBLE && lng >= MIN_DOUBLE))
+	long double lng = std::atof(input);
+	
+	if (!(lng <= DBL_MAX && lng >= -DBL_MAX))
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -41,7 +41,7 @@ void	ft_convert_int(char* input)
 		std::cout << "double: impossible" << std::endl;
 		return ;
 	}
-	else if (!(lng <= MAX_FLOAT && lng >= MIN_FLOAT))
+	else if (!(lng <= FLT_MAX && lng >= -FLT_MAX))
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -49,9 +49,8 @@ void	ft_convert_int(char* input)
 		std::cout << std::fixed << "double: " << static_cast<double>(lng) << std::endl;
 		return ;
 	}
-	else if (!(lng <= MAX_INT && lng >= MIN_INT))
+	else if (!(lng <= INT_MAX && lng >= INT_MIN))
 	{
-		std::cout << "goes in" << std::endl;
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
 		std::cout << std::fixed << "float: " << static_cast<float>(lng) << 'f' << std::endl;

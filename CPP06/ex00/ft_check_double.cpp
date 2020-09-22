@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 13:23:04 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/21 17:51:22 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/22 16:25:07 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,12 @@ void	ft_convert_double(char* input)
 {
 	std::cout.precision(1);
 	double		doublevar = std::atof(input);
-	long double	lng = std::atol(input);
+	long double lng = std::atof(input);
 
 	if (strcmp("nan", input) == 0 || strcmp("+inf", input) == 0
 	|| strcmp("-inf", input) == 0 || strcmp("inf", input) == 0)
 	{
-		std::cout << "char: impossible" << std::endl
-		<< "int: impossible" << std::endl;
+		std::cout << "char: impossible" << std::endl << "int: impossible" << std::endl;
 		if (strcmp("nan", input) == 0)
 			std::cout << "float: nanf" << std::endl << "double: nan" << std::endl;
 		if (strcmp("+inf", input) == 0)
@@ -59,7 +58,7 @@ void	ft_convert_double(char* input)
 			std::cout << "float: inff" << std::endl << "double: inf" << std::endl;
 		return ;
 	}
-	if (!(lng <= MAX_DOUBLE && lng >= MIN_DOUBLE))
+	if (!(lng <= DBL_MAX && lng >= -DBL_MAX))
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -67,7 +66,7 @@ void	ft_convert_double(char* input)
 		std::cout << "double: impossible" << std::endl;
 		return ;
 	}
-	else if (!(lng <= MAX_FLOAT && lng >= MIN_FLOAT))
+	else if (!(lng <= FLT_MAX && lng >= -FLT_MAX))
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -75,7 +74,7 @@ void	ft_convert_double(char* input)
 		std::cout << std::fixed << "double: " << doublevar << std::endl;
 		return ;
 	}
-	else if (!(lng <= MAX_INT && lng >= MIN_INT))
+	else if (!(lng <= INT_MAX && lng >= INT_MIN))
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;

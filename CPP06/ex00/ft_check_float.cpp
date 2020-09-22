@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 13:23:56 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/21 17:26:57 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/22 16:25:28 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_convert_float(char* input)
 {
 	std::cout.precision(1);
 	float		floatvar = std::atof(input);
-	long double	lng = std::atol(input);
+	long double	lng = std::atof(input);
 	if (strcmp("nanf", input) == 0 || strcmp("+inff", input) == 0
 	|| strcmp("-inff", input) == 0 || strcmp("inff", input) == 0)
 	{
@@ -71,7 +71,15 @@ void	ft_convert_float(char* input)
 			std::cout << "float: -inff" << std::endl << "double: -inf" << std::endl;
 		return ;
 	}
-	if (!(lng <= MAX_FLOAT && lng >= MIN_FLOAT))
+	if (!(lng <= DBL_MAX && lng >= -DBL_MAX))
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return ;
+	}
+	else if (!(lng <= FLT_MAX && lng >= -FLT_MAX))
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -79,9 +87,9 @@ void	ft_convert_float(char* input)
 		std::cout << std::fixed << "double: " << static_cast<double>(lng) << std::endl;
 		return ;
 	}
-	else if (!(lng <= MAX_INT && lng >= MIN_INT))
+	else if (!(lng <= INT_MAX && lng >= INT_MIN))
 	{
-		std::cout << "char: impossible" << std::endl; // or not displayable?
+		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
 		std::cout << std::fixed << "float: " << floatvar << 'f' << std::endl;
 		std::cout << std::fixed << "double: " << static_cast<double>(floatvar) << std::endl;
