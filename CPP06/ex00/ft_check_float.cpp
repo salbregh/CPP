@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 13:23:56 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/22 16:25:28 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/22 20:30:59 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int		ft_check_float(std::string input)
 		return (0);
 	if (checkf != 1)
 		return (0);
+	if (checkf == 1 && checkdot == 1 && input.length() == 2)
+		return (0);
 	return (1);
 }
 
@@ -69,6 +71,8 @@ void	ft_convert_float(char* input)
 			std::cout << "float: +inff" << std::endl << "double: +inf" << std::endl;
 		if (strcmp("-inff", input) == 0)
 			std::cout << "float: -inff" << std::endl << "double: -inf" << std::endl;
+		if (strcmp("inff", input) == 0)
+			std::cout << "float: inff" << std::endl << "double: inf" << std::endl;
 		return ;
 	}
 	if (!(lng <= DBL_MAX && lng >= -DBL_MAX))
@@ -97,7 +101,7 @@ void	ft_convert_float(char* input)
 	}
 	if ((floatvar < 32 || floatvar > 123) || (floatvar >= 0 && floatvar <= 9))
 		std::cout << "char: non displayable" << std::endl;
-	if ((floatvar > 255 || floatvar < 0))
+	else if ((floatvar > 255 || floatvar < 0))
 		std::cout << "char: impossible" << std::endl;
 	else
 		std::cout << std::fixed << "char: '" << static_cast<char>(floatvar) << "'" << std::endl;
