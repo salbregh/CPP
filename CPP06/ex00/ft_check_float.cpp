@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 13:23:56 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/22 16:25:28 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/23 14:03:18 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	ft_convert_float(char* input)
 	}
 	if ((floatvar < 32 || floatvar > 123) || (floatvar >= 0 && floatvar <= 9))
 		std::cout << "char: non displayable" << std::endl;
-	if ((floatvar > 255 || floatvar < 0))
+	else if ((floatvar > 255 || floatvar < 0))
 		std::cout << "char: impossible" << std::endl;
 	else
 		std::cout << std::fixed << "char: '" << static_cast<char>(floatvar) << "'" << std::endl;
