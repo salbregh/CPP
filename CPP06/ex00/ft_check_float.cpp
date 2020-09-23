@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/17 13:23:56 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/23 14:03:18 by salbregh      ########   odam.nl         */
+/*   Created: 2020/09/23 14:04:12 by salbregh      #+#    #+#                 */
+/*   Updated: 2020/09/23 14:04:14 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int		ft_check_float(std::string input)
 		return (0);
 	if (checkf != 1)
 		return (0);
+	if (checkf == 1 && checkdot == 1 && input.length() == 2)
+		return (0);
 	return (1);
 }
 
@@ -69,6 +71,8 @@ void	ft_convert_float(char* input)
 			std::cout << "float: +inff" << std::endl << "double: +inf" << std::endl;
 		if (strcmp("-inff", input) == 0)
 			std::cout << "float: -inff" << std::endl << "double: -inf" << std::endl;
+		if (strcmp("inff", input) == 0)
+			std::cout << "float: inff" << std::endl << "double: inf" << std::endl;
 		return ;
 	}
 	if (!(lng <= DBL_MAX && lng >= -DBL_MAX))

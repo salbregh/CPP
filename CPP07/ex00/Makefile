@@ -6,7 +6,7 @@
 #    By: salbregh <salbregh@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/22 18:03:39 by salbregh      #+#    #+#                  #
-#    Updated: 2020/09/22 18:04:26 by salbregh      ########   odam.nl          #
+#    Updated: 2020/09/22 18:35:04 by salbregh      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,7 @@ CXX			=	clang++
 
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-FILES		=	main.cpp \
-				test.cpp
+FILES		=	whatever.cpp
 
 all:		$(NAME)
 
