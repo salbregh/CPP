@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/19 14:09:02 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/22 15:58:52 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/24 11:57:57 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int		main()
 	Data *data;
 	data = deserialize(ser);
 	std::cout << "Value of s1 : " << data->s1 << std::endl;
+	std::cout << "Value of n : " << data->n << std::endl;
 	std::cout << "Value of s2 : " << data->s2 << std::endl;
-	std::cout << "Value of n: " << data->n << std::endl;
 	// system("leaks serialization");
 	return (0);
 }

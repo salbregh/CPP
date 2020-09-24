@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 20:18:46 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/22 16:01:15 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/24 11:25:13 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Data	*deserialize(void *raw)
 	string = (reinterpret_cast<char *>(raw));
 	for (int i = 0; i < 8; i++)
 		s1[i] = string[i];
-	deserialize->s1 = s1; // set the struct of s1
+	deserialize->s1 = s1;
 	n = *(static_cast<int *>(raw) + 2);
 	deserialize->n = n;
 	for (int i = 0; i < 8; i++)

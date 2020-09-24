@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 22:42:25 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/18 13:37:35 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/24 11:42:01 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ class	Base
 /*
 ** virtual destructor is to destruct the subclasses
 ** in a proper order, when you delete a bass class
-** pointing to a dirived class object
+** pointing to a derived class object
 */
 
-// creating 3 empty classes that inherit from base
 class	A : public Base {};
 class	B : public Base {};
 class	C : public Base {};

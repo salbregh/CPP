@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 14:41:59 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/18 15:06:02 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/24 12:07:11 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 ** cast the base class pointer to the derived class pointer
 ** (if the Base *p is from A)
 ** 
-** Since casting a dericed class pointer to a base class pointer
+** Since casting a derived class pointer to a base class pointer
 ** into some other derived class pointer is invalid
 ** dynamic_cast<A*>(p) if the base class is not A, should return NULL
 */
