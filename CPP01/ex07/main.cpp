@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/19 14:06:07 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/29 16:42:08 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/29 16:52:29 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,15 @@ int		main(int argc, char **argv)
 	// newstr holds the content of the test file
 	int		i = 0;
 	size_t 	j = 0;
-	while ((j = newstr.find(s1, i)) != std::string::npos) // npos looks until the end of the string
+	// npos looks until the end of the string
+	while ((j = newstr.find(s1, i)) != std::string::npos)
 	{
 		newstr.replace(j, s1.length(), s2);
 		i = j + s2.length();
 	}
 	// replaces all occurence of s1 with s2
+	// put the value of newstr in the .replacement file
 	ofs << newstr;
-	// put the value of newstr in the new .replacement file
 	ifs.close();
 	ofs.close();
 	return (0);
