@@ -6,16 +6,12 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/19 14:06:07 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/29 16:36:00 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/29 16:42:08 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
-
-// ofstream: stream class to write on files
-// ifstream: stream class to read from files
-// fstream: streamclass to both read and wirte from/to files
 
 int		main(int argc, char **argv)
 {
@@ -41,7 +37,6 @@ int		main(int argc, char **argv)
 	while (getline(ifs, str)) // read all the lines in the ifs
 	{
 		newstr.append(str);
-		std::cout << str << std::endl;
 		if (!ifs.eof())
 			newstr.append("\n");
 	}
