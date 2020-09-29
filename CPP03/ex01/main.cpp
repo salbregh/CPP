@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 10:16:36 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 15:24:39 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/27 22:06:43 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ int		main()
 	Frag1.takeDamage(20);
 	// add repare to more then 100
 	Frag1.beRepaired(20);
-	Frag1.meleeAttack("TARGET");
-	Scav1.meleeAttack("TARGET");
-
 	
 	Frag1.vaulthunter_dot_exe("TARGET");
 	Frag1.vaulthunter_dot_exe("TARGET");

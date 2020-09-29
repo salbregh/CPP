@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/28 12:03:19 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 17:53:40 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/27 22:19:46 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 NinjaTrap::NinjaTrap(std::string name)
 {
-	std::cout << "Constructor NINJATRAP called, made: " << this->_name << std::endl;
+	std::cout << "Constructor NINJATRAP called" << std::endl;
 	this->_classname = "NinjaTrap";
 	this->_name = name;
 	this->_hitPoints = 60;

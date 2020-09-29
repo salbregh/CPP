@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 18:58:04 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/31 14:13:33 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/27 22:04:23 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const &rhs)
 
 void		ScavTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "SCAV " << this->_name << " attacks " << target << " at range, causing "
+	std::cout << "SCAVTRAP " << this->_name << " attacks " << target << " at range, causing "
 	<< _rangesAttackDamage << " points of damage!" << std::endl;
 }
 
 void		ScavTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "SCAV " << this->_name << " attacks " << target << " with melee attack, causing "
+	std::cout << "SCAVTRAP " << this->_name << " attacks " << target << " with melee attack, causing "
 	<< _meleeAttackDamage << " points of damage!" << std::endl;
 }
 

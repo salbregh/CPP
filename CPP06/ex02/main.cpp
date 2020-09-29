@@ -6,13 +6,13 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 22:47:27 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/24 11:58:45 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/27 22:30:56 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "identity.hpp"
 
-int		main()
+void	function(void)
 {
 	srand((unsigned) time(0));
 	Base *random;
@@ -21,6 +21,13 @@ int		main()
 	
 	identity_from_pointer(random);
 	identity_from_reference(ref);
-	
+	delete random;
+}
+
+int		main()
+{
+	function();
+	system("leaks identity");
+
 	return (0);
 }

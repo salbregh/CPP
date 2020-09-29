@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/18 15:53:56 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/18 15:56:33 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/28 13:34:08 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,14 @@ void	brain(void)
 
 	std::string*	BrainPointer = &Brain;
 	std::cout << *BrainPointer << std::endl;
-	// address is without *
 
 	std::string&	BrainReference = Brain;
 	std::cout << BrainReference << std::endl;
-	// address is with &
 }
 
 int		main(void)
 {
 	brain();
+	// system("leaks a.out");
 	return (0);
 }

@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   easyfind.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/17 17:54:34 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/28 13:04:16 by salbregh      ########   odam.nl         */
+/*   Created: 2020/09/25 17:04:51 by salbregh      #+#    #+#                 */
+/*   Updated: 2020/09/25 17:17:58 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
-
-void	PonyOnTheHeap(void)
+template <typename T>
+easyfind	iter(T list, int)
 {
-	Pony	*HeapPony = new Pony("Bob", "PINK", 1);
-	delete HeapPony;
+    //  T is a container of int
+    //  find the first occurence of int in the T list
 }
 
-void	PonyOnTheStack(void)
-{
-	Pony	StackPony = Pony("Harry", "Purple", 3);
-}
-
-int		main(void)
-{
-	PonyOnTheHeap();
-	PonyOnTheStack();
-	system("leaks a.out");
-	return (0);
-}

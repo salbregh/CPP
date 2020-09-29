@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/22 18:20:44 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/25 16:52:03 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/27 19:39:16 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,27 @@ void	swap(T & x, T & y)
 	y = tmp;
 }
 
-class   Awesome 
-{
-    public:
-		Awesome( int n ) : _n( n ) {}
-		bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
-		bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
-		bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
-		bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
-		bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
-		bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
-		void 	print_n(void) { std::cout << this->_n << std::endl; } 
-		int		get_n(void) { return (this->_n); }
-	private:
-		int _n;
-};
+// class   Awesome 
+// {
+//     public:
+// 		Awesome( int n ) : _n( n ) {}
+// 		bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
+// 		bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
+// 		bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
+// 		bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
+// 		bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
+// 		bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
+// 		void 	print_n(void) { std::cout << this->_n << std::endl; } 
+// 		int		get_n(void) { return (this->_n); }
+// 	private:
+// 		int _n;
+// };
 
-std::ostream	&operator<<(std::ostream &o, Awesome &a)
-{
-	o << a.get_n() << std::endl;
-	return (o);
-}
+// std::ostream	&operator<<(std::ostream &o, Awesome &a)
+// {
+// 	o << a.get_n() << std::endl;
+// 	return (o);
+// }
 
 int		main(void)
 {
@@ -72,18 +72,18 @@ int		main(void)
 	std::cout << "min ( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 
-	Awesome test1(1);
-	Awesome	test2(2);
+	// Awesome test1(1);
+	// Awesome	test2(2);
 
-	std::cout << "value of test1: " << test1.get_n() << std::endl;
-	std::cout << "value of test2: " << test2.get_n() << std::endl;
+	// std::cout << "value of test1: " << test1.get_n() << std::endl;
+	// std::cout << "value of test2: " << test2.get_n() << std::endl;
 
-	::swap (test1, test2); // test1 = 2, test 2 = 1
-	std::cout << "value of test1: " << test1.get_n() << std::endl;
-	std::cout << "value of test2: " << test2.get_n() << std::endl;
+	// ::swap (test1, test2); // test1 = 2, test 2 = 1
+	// std::cout << "value of test1: " << test1.get_n() << std::endl;
+	// std::cout << "value of test2: " << test2.get_n() << std::endl;
 
-	std::cout << "min ( test1, test2 ) = " << ::min( test1.get_n() , test2.get_n() ) << std::endl;
-	std::cout << "max( test1, test2 ) = " << ::max( test1.get_n(), test2.get_n() ) << std::endl;
+	// std::cout << "min ( test1, test2 ) = " << ::min( test1.get_n() , test2.get_n() ) << std::endl;
+	// std::cout << "max( test1, test2 ) = " << ::max( test1.get_n(), test2.get_n() ) << std::endl;
 
 	return (0);
 }

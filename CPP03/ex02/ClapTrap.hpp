@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 19:33:15 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 12:13:27 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/27 22:08:29 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class		ClapTrap
 		void		meleeAttack(std::string const & target);
 		int			takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
-
 
 	protected:
 		std::string		_name;

@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 18:58:04 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/31 14:18:41 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/27 22:22:59 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap(std::string name)
 {
-	std::cout << "SCAVTRAP made: " << this->_name << std::endl;
+	std::cout << "constructor SCAVTRAP called"<< std::endl;
 	this->_name = name;
 	this->_classname = "ScavTrap";
 	this->_hitPoints = 100;

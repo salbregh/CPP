@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 20:18:46 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/24 11:25:13 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/24 16:26:04 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ Data	*deserialize(void *raw)
 	for (int i = 0; i < 8; i++)
 		s2[i] = string[i + 12];
 	deserialize->s2 = s2;
+	delete string;
 	return (deserialize);
 }

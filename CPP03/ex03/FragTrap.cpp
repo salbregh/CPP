@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 15:58:24 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/31 14:16:52 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/27 22:18:19 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(std::string name)
 {
-	std::cout << "Constructor FRAGTRAP called, made: " << this->_name << std::endl;
+	std::cout << "Constructor FRAGTRAP called" << std::endl;
 	this->_classname = "FragTrap";
 	this->_name = name;
 	this->_hitPoints = 100;

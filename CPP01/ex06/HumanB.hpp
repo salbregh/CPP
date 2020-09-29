@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/19 11:25:17 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/19 13:01:14 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/28 14:18:54 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ class	HumanB
 		Weapon*			_weapon;
 	
 	public:
+		HumanB(void);
+		~HumanB(void);
 		HumanB(std::string name);
-		// HumanB(Weapon& weapon);
 		void	attack(void);
-		void	setWeapon(Weapon& weapon);
+		void	setWeapon(Weapon& weaponB);
 };
 
 #endif

@@ -6,15 +6,24 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/19 11:25:14 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/19 13:12:24 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/28 14:15:58 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(void)
 {
-    this->_name = name;
+    return ;
+}
+
+HumanB::~HumanB(void)
+{
+    return ;
+}
+
+HumanB::HumanB(std::string name) : _name(name), _weapon(NULL)
+{
     return ;
 }
 
@@ -24,8 +33,8 @@ void	HumanB::attack(void)
     return ;
 }
 
-void    HumanB::setWeapon(Weapon& weapon)
+void    HumanB::setWeapon(Weapon& weaponB)
 {
-    _weapon = &weapon;
+    _weapon = &weaponB;
     return ;
 }
