@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 08:02:09 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/16 17:28:55 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/30 12:01:25 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	FragTrap
 		unsigned int	_maxEnergyPoints;
 		unsigned int 	_level;
 		unsigned int	_meleeAttackDamage;
-		unsigned int	_rangesAttackDamage;
+		unsigned int	_rangedAttackDamage;
 		unsigned int	_armorDamageReduction;
 		FragTrap(void);
 	

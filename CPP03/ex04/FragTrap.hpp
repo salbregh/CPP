@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 08:02:09 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/16 17:32:31 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/30 13:48:39 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class	FragTrap : public virtual ClapTrap
+class	FragTrap : virtual public ClapTrap
 {	
 	private:
 		FragTrap(void);

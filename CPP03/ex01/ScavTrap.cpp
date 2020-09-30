@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 18:58:04 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/27 22:04:23 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/30 12:05:57 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,9 @@ ScavTrap::ScavTrap(std::string name): _name(name)
 	this->_energyPoints = 50;
 	this->_maxEnergyPoints = 50;
 	this->_meleeAttackDamage = 20;
-	this->_rangesAttackDamage = 15;
+	this->_rangedAttackDamage = 15;
 	this->_armorDamageReduction = 3;
 	this->_level = 1;
-	std::cout << "START VALUES OF " << this->_name << std::endl;
-	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
-	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &src)
@@ -48,7 +45,7 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const &rhs)
 		_maxEnergyPoints = rhs._maxEnergyPoints;
 		_maxHitPoints = rhs._maxHitPoints;
 		_meleeAttackDamage = rhs._meleeAttackDamage;
-		_rangesAttackDamage = rhs._rangesAttackDamage;
+		_rangedAttackDamage = rhs._rangedAttackDamage;
 	}
 	return (*this);
 }
@@ -56,7 +53,7 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const &rhs)
 void		ScavTrap::rangedAttack(std::string const & target)
 {
 	std::cout << "SCAVTRAP " << this->_name << " attacks " << target << " at range, causing "
-	<< _rangesAttackDamage << " points of damage!" << std::endl;
+	<< _rangedAttackDamage << " points of damage!" << std::endl;
 }
 
 void		ScavTrap::meleeAttack(std::string const & target)
@@ -110,7 +107,4 @@ void		ScavTrap::challengeNewcomer(void)
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << "Destructor ScavTrap called, deleted: " << this->_name << std::endl;
-	std::cout << "END VALUES OF " << this->_name << std::endl;
-	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
-	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl;
 }

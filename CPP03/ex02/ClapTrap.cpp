@@ -6,13 +6,18 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/27 17:30:55 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/08/28 15:31:02 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/30 13:15:03 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void) : _name("unknown")
+{
+	return ;
+}
+
+ClapTrap::ClapTrap(std::string name) : _name(name)
 {
 	std::cout << "Constructor CLAPTRAP called" << std::endl;
 	return ;
@@ -30,15 +35,15 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const &rhs)
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &rhs)
 	{
-		_name = rhs._name;
-		_armorDamageReduction = rhs._armorDamageReduction;
-		_energyPoints = rhs._energyPoints;
-		_hitPoints = rhs._hitPoints;
-		_level = rhs._level;
-		_maxEnergyPoints = rhs._maxEnergyPoints;
-		_maxHitPoints = rhs._maxHitPoints;
-		_meleeAttackDamage = rhs._meleeAttackDamage;
-		_rangesAttackDamage = rhs._rangesAttackDamage;
+		this->_name = rhs._name;
+		this->_armorDamageReduction = rhs._armorDamageReduction;
+		this->_energyPoints = rhs._energyPoints;
+		this->_hitPoints = rhs._hitPoints;
+		this->_level = rhs._level;
+		this->_maxEnergyPoints = rhs._maxEnergyPoints;
+		this->_maxHitPoints = rhs._maxHitPoints;
+		this->_meleeAttackDamage = rhs._meleeAttackDamage;
+		this->_rangedAttackDamage = rhs._rangedAttackDamage;
 	}
 	return (*this);
 }
@@ -46,13 +51,13 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const &rhs)
 void		ClapTrap::rangedAttack(std::string const & target)
 {
 	std::cout << this->_classname << " " << this->_name << " attacks " << target 
-	<< " at range, causing " << _rangesAttackDamage << " points of damage!" << std::endl;
+	<< " at range, causing " << this->_rangedAttackDamage << " points of damage!" << std::endl;
 }
 		
 void		ClapTrap::meleeAttack(std::string const & target)
 {
 	std::cout << this->_classname << " " << this->_name << " attacks " << target
-	<< " with melee attack, causing " << _meleeAttackDamage << " points of damage!" << std::endl;
+	<< " with melee attack, causing " << this->_meleeAttackDamage << " points of damage!" << std::endl;
 }
 		
 int			ClapTrap::takeDamage(unsigned int amount)
@@ -65,10 +70,10 @@ int			ClapTrap::takeDamage(unsigned int amount)
 	}
 	else
 	{
-		if (_hitPoints > (amount - _armorDamageReduction))
-			_hitPoints = (_hitPoints - (amount - _armorDamageReduction));
+		if (this->_hitPoints > (amount - this->_armorDamageReduction))
+			this->_hitPoints = (this->_hitPoints - (amount - this->_armorDamageReduction));
 		else
-			_hitPoints = 0;
+			this->_hitPoints = 0;
 	}
 	std::cout << this->_name << "'s HP is now: " << this->_hitPoints << std::endl;
 	return (0);
@@ -76,17 +81,17 @@ int			ClapTrap::takeDamage(unsigned int amount)
 		
 void		ClapTrap::beRepaired(unsigned int amount)
 {
-	if (_hitPoints == _maxHitPoints)
+	if (this->_hitPoints == this->_maxHitPoints)
 		std::cout << this->_name << " couldn't be repaired HP already at the maximum" << std::endl;
-	else if (_hitPoints + amount >= _maxHitPoints)
+	else if (this->_hitPoints + amount >= this->_maxHitPoints)
 	{
-		_hitPoints = _maxHitPoints;
+		this->_hitPoints = this->_maxHitPoints;
 		std::cout << this->_name << "'s HP repaired to: " << _hitPoints << std::endl;
 	}
 	else
 	{
-		_hitPoints = _hitPoints + amount;
-		std::cout << this->_name << "'s HP repaired to: " << _hitPoints << std::endl;
+		this->_hitPoints = this->_hitPoints + amount;
+		std::cout << this->_name << "'s HP repaired to: " << this->_hitPoints << std::endl;
 	}
 }
 

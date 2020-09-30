@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/28 17:59:01 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/16 17:33:09 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/30 13:47:46 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@
 # include "ClapTrap.hpp"
 
 class	SuperTrap :  public FragTrap, public NinjaTrap
-{
-	private:
-		SuperTrap(void);
-		
+{	
 	public:
+		SuperTrap(void);
 		SuperTrap(std::string name);
 		~SuperTrap(void);
 		SuperTrap(SuperTrap const &src);

@@ -6,15 +6,15 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/28 12:03:19 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/27 22:19:46 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/30 13:22:10 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
 
-NinjaTrap::NinjaTrap(std::string name)
+NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Constructor NINJATRAP called" << std::endl;
+	std::cout << "Constructor NINJATRAP called, made : " << this->_name << std::endl;
 	this->_classname = "NinjaTrap";
 	this->_name = name;
 	this->_hitPoints = 60;
@@ -22,12 +22,9 @@ NinjaTrap::NinjaTrap(std::string name)
 	this->_energyPoints = 120;
 	this->_maxEnergyPoints = 120;
 	this->_meleeAttackDamage = 60;
-	this->_rangesAttackDamage = 5;
+	this->_rangedAttackDamage = 5;
 	this->_armorDamageReduction = 0;
 	this->_level = 1;
-	std::cout << "START VALUES OF " << this->_name << std::endl;
-	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
-	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl << std::endl;
 }
 
 NinjaTrap::NinjaTrap(NinjaTrap const &src)
@@ -42,15 +39,15 @@ NinjaTrap&	NinjaTrap::operator=(NinjaTrap const &rhs)
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &rhs)
 	{
-		_name = rhs._name;
-		_armorDamageReduction = rhs._armorDamageReduction;
-		_energyPoints = rhs._energyPoints;
-		_hitPoints = rhs._hitPoints;
-		_level = rhs._level;
-		_maxEnergyPoints = rhs._maxEnergyPoints;
-		_maxHitPoints = rhs._maxHitPoints;
-		_meleeAttackDamage = rhs._meleeAttackDamage;
-		_rangesAttackDamage = rhs._rangesAttackDamage;
+		this->_name = rhs._name;
+		this->_armorDamageReduction = rhs._armorDamageReduction;
+		this->_energyPoints = rhs._energyPoints;
+		this->_hitPoints = rhs._hitPoints;
+		this->_level = rhs._level;
+		this->_maxEnergyPoints = rhs._maxEnergyPoints;
+		this->_maxHitPoints = rhs._maxHitPoints;
+		this->_meleeAttackDamage = rhs._meleeAttackDamage;
+		this->_rangedAttackDamage = rhs._rangedAttackDamage;
 	}
 	return (*this);
 }
@@ -73,7 +70,4 @@ void	NinjaTrap::ninjaShoebox(ScavTrap &attack)
 NinjaTrap::~NinjaTrap(void)
 {
 	std::cout << "Destructor called, deleted: " << this->_name << std::endl;
-	std::cout << "END VALUES OF " << this->_name << std::endl;
-	std::cout << "value _hitPoints: " << this->_hitPoints << std::endl;
-	std::cout << "value _energyPoints: " << this->_energyPoints << std::endl;
 }

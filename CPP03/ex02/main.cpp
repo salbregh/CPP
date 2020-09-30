@@ -6,18 +6,17 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 10:16:36 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/27 22:11:53 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/30 13:12:31 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include <cstdlib>
 
 int		main()
 {
-	srand((unsigned) time(0));
-	// for the random attack function
-	
+	srand((unsigned) time(0));	
 	FragTrap Frag1("FRAG");
 	ScavTrap Scav1("SCAV");
 
@@ -25,8 +24,8 @@ int		main()
 	Frag1.beRepaired(10);
 	Scav1.beRepaired(20);
 
-	Frag1.rangedAttack("TWO");
-	Scav1.rangedAttack("FRAG");
+	Frag1.rangedAttack("target");
+	Scav1.rangedAttack("target");
 	// takes 20 - armourreduction 5 points of damage so HP should be 85
 	Frag1.takeDamage(20);
 	// add repare to more then 100

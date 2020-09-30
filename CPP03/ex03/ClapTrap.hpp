@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 19:33:15 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/09/16 17:30:47 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/09/30 13:21:18 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ class		ClapTrap
 {
 	public:
 		ClapTrap(void);
+		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const &src);
 		~ClapTrap(void);
 		ClapTrap&	operator=(ClapTrap const &rhs);
-		void		rangedAttack(std::string const & target);
-		void		meleeAttack(std::string const & target);
-		int			takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
-		std::string	getName(void) const;
-
+		std::string			getName(void) const;
+		virtual void		rangedAttack(std::string const & target);
+		virtual void		meleeAttack(std::string const & target);
+		virtual int			takeDamage(unsigned int amount);
+		virtual void		beRepaired(unsigned int amount);
 
 	protected:
 		std::string		_name;
@@ -37,7 +37,7 @@ class		ClapTrap
 		unsigned int	_maxEnergyPoints;
 		unsigned int 	_level;
 		unsigned int	_meleeAttackDamage;
-		unsigned int	_rangesAttackDamage;
+		unsigned int	_rangedAttackDamage;
 		unsigned int	_armorDamageReduction;
 };
 
