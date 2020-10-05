@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/02 17:00:22 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/10/03 21:58:43 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/10/05 13:53:31 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,28 @@ int		main()
 	sp.addNumber(11);
 	sp.showContainer();
 
-	// shortest span is 2
 	std::cout << "SHORTEST SPAN: "; 
 	std::cout << sp.shortestSpan() << std::endl;
-	// longest span is 14
 	std::cout << "LONGEST SPAN: ";
 	std::cout << sp.longestSpan() << std::endl;
 
+	Span max = Span(2);
+	max.addNumber(INT_MIN);
+	max.addNumber(INT_MAX);
+	max.showContainer();
+	try {
+	std::cout << "LONGEST SPAN: " ;
+	std::cout << max.longestSpan() << std::endl; }
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+	try {
+	std::cout << "SHORTEST SPAN: ";
+	std::cout << max.shortestSpan() << std::endl;
+	}
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
 
 	Span sp2 = Span(3);
 	sp2.addNumber(0);

@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/02 16:59:35 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/10/03 21:34:21 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/10/05 13:41:28 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,24 @@
 # include <iostream>
 # include <vector>
 # include <algorithm>
-# include <limits.h>
+# include <limits>
+# include <float.h>
 
 class		Span
 {
 	private:
 		unsigned int		_N;
-		std::vector<int> 	_container;
+		std::vector<long> 	_container;
 		Span(void);
 	public:
 		Span(unsigned int N);
 		Span(const Span &src);
 		Span&	operator=(const Span &rhs);
 		~Span(void);
-		void	addNumber(unsigned int n);
-		int		longestSpan(void);
-		int		shortestSpan(void);
-		void	showContainer(void) const;
+		void		addNumber(long n);
+		long		longestSpan(void);
+		long		shortestSpan(void);
+		void		showContainer(void) const;
 		
 		class NoSpanException : public std::exception
 		{

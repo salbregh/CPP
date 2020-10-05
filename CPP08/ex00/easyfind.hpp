@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/25 17:04:51 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/10/02 16:52:23 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/10/05 12:42:21 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ template <typename T>
 typename T::const_iterator    easyfind(T &container, const int findme)
 {
     typename T::const_iterator it = container.begin();
-    typename T::const_iterator ite = container.end(); // end is over the last element
+    typename T::const_iterator ite = container.end();
     typename T::const_iterator p = std::find(it, ite, findme);
     if (p == ite)
         throw NotFoundException();
     else
-        std::cout << "Number found is: " << findme << std::endl;
+        std::cout << "Number found is: " << *p << std::endl;
     return p;
 }
 

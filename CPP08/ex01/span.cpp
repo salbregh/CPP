@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/02 16:59:27 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/10/04 16:40:49 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/10/05 13:42:06 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Span&		Span::operator=(const Span &rhs)
 	return (*this);
 }
 
-void		Span::addNumber(unsigned int n)
+void		Span::addNumber(long n)
 {
 	if (_container.size() >= this->_N)
 		throw ContainerFullException();
@@ -44,27 +44,28 @@ void		Span::addNumber(unsigned int n)
 	return ;
 }
 
-int			Span::longestSpan(void)
+long			Span::longestSpan(void)
 {
 	if (this->_N <= 1)
 		throw NoSpanException();
-	int		min = *min_element(_container.begin(), _container.end());
-	int		max = *max_element(_container.begin(), _container.end());
-	return  (max - min);
+	long		min = *min_element(_container.begin(), _container.end());
+	long		max = *max_element(_container.begin(), _container.end());
+	long		check = max - min;
+	return  (check);
 }
 		
-int			Span::shortestSpan(void)
+long			Span::shortestSpan(void)
 {
 	if (this->_N <= 1)
 		throw NoSpanException();
-	std::vector<int>::iterator it = this->_container.begin();
-	std::vector<int>::iterator ite = this->_container.end();
-	int		check = INT_MAX;
-	int		range = INT_MAX;
+	std::vector<long>::iterator it = this->_container.begin();
+	std::vector<long>::iterator ite = this->_container.end();
+	long		check = INT_MAX;
+	long		range = INT_MAX;
 
 	while (it < ite)
 	{
-		for (std::vector<int>::iterator itcheck = _container.begin(); itcheck < ite; itcheck++)
+		for (std::vector<long>::iterator itcheck = _container.begin(); itcheck < ite; itcheck++)
 		{
 			if (*itcheck == *it)
 				continue ;
@@ -84,8 +85,8 @@ int			Span::shortestSpan(void)
 
 void	Span::showContainer(void) const
 {
-	std::vector<int>::const_iterator it = this->_container.begin();
-	std::vector<int>::const_iterator ite = this->_container.end();
+	std::vector<long>::const_iterator it = this->_container.begin();
+	std::vector<long>::const_iterator ite = this->_container.end();
 	std::cout << "This is in your container: ";
 	while (it != ite)
 	{
