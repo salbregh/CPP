@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/02 16:59:35 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/10/05 13:41:28 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/10/06 18:23:58 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ class		Span
 {
 	private:
 		unsigned int		_N;
-		std::vector<long> 	_container;
+		std::vector<int> 	_container;
 		Span(void);
 	public:
 		Span(unsigned int N);
 		Span(const Span &src);
 		Span&	operator=(const Span &rhs);
 		~Span(void);
-		void		addNumber(long n);
+		void		addNumber(int n);
 		long		longestSpan(void);
 		long		shortestSpan(void);
 		void		showContainer(void) const;
@@ -53,6 +53,23 @@ class		Span
 				~ContainerFullException(void) throw();
 				virtual const char* what() const throw();
 		};
+
+		class NoSpaceException : public std::exception
+		{
+			public:
+				NoSpaceException(void) throw();
+				NoSpaceException(const NoSpaceException &src) throw();
+				NoSpaceException&	operator=(const NoSpaceException &rhs) throw();
+				~NoSpaceException(void) throw();
+				virtual const char* what() const throw();
+		};
+		
+		template <typename S>
+		void	addNumber(S begin, S end){
+			if (std::distance(begin, end) + this->_container.size() > this->_N)
+				throw NoSpaceException();
+			this->_container.insert(this->_container.end(), begin, end);
+		}
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/02 16:59:27 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/10/05 13:42:06 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/10/06 20:58:58 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Span&		Span::operator=(const Span &rhs)
 	return (*this);
 }
 
-void		Span::addNumber(long n)
+void		Span::addNumber(int n)
 {
 	if (_container.size() >= this->_N)
 		throw ContainerFullException();
@@ -58,21 +58,21 @@ long			Span::shortestSpan(void)
 {
 	if (this->_N <= 1)
 		throw NoSpanException();
-	std::vector<long>::iterator it = this->_container.begin();
-	std::vector<long>::iterator ite = this->_container.end();
+	std::vector<int>::iterator it = this->_container.begin();
+	std::vector<int>::iterator ite = this->_container.end();
 	long		check = INT_MAX;
 	long		range = INT_MAX;
 
 	while (it < ite)
 	{
-		for (std::vector<long>::iterator itcheck = _container.begin(); itcheck < ite; itcheck++)
+		for (std::vector<int>::iterator itcheck = _container.begin(); itcheck < ite; itcheck++)
 		{
 			if (*itcheck == *it)
 				continue ;
 			else if (*itcheck < *it)
-				check = *it - *itcheck;
+				check = static_cast<long>(*it) - static_cast<long>(*itcheck);
 			else if (*itcheck > *it)
-				check = *itcheck - *it;
+				check = static_cast<long>(*itcheck) - static_cast<long>(*it);
 			if (check < range || range == INT_MAX)
 				range = check;
 		}
@@ -85,8 +85,8 @@ long			Span::shortestSpan(void)
 
 void	Span::showContainer(void) const
 {
-	std::vector<long>::const_iterator it = this->_container.begin();
-	std::vector<long>::const_iterator ite = this->_container.end();
+	std::vector<int>::const_iterator it = this->_container.begin();
+	std::vector<int>::const_iterator ite = this->_container.end();
 	std::cout << "This is in your container: ";
 	while (it != ite)
 	{
@@ -99,6 +99,11 @@ void	Span::showContainer(void) const
 Span::~Span(void)
 {
 	return ;
+}
+
+const char* Span::NoSpanException::what() const throw()
+{
+	return "No span";
 }
 
 Span::NoSpanException::NoSpanException(void) throw()
@@ -123,9 +128,31 @@ Span::NoSpanException::~NoSpanException(void) throw()
 	return ;
 }
 
-const char* Span::NoSpanException::what() const throw()
+Span::NoSpaceException::NoSpaceException(void) throw()
 {
-	return "No span";
+	return ;
+}
+
+Span::NoSpaceException::NoSpaceException(const NoSpaceException &src) throw()
+{
+	*this = src;
+	return ;
+}
+
+Span::NoSpaceException&	Span::NoSpaceException::operator=(const NoSpaceException &rhs) throw()
+{
+	(void)rhs;
+	return (*this);
+}
+
+Span::NoSpaceException::~NoSpaceException(void) throw()
+{
+	return ;
+}
+
+const char* Span::NoSpaceException::what() const throw()
+{
+	return "No space";
 }
 
 Span::ContainerFullException::ContainerFullException(void) throw()

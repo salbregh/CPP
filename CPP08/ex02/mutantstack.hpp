@@ -6,7 +6,7 @@
 /*   By: salbregh <salbregh@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/03 22:19:49 by salbregh      #+#    #+#                 */
-/*   Updated: 2020/10/04 17:34:55 by salbregh      ########   odam.nl         */
+/*   Updated: 2020/10/06 21:00:25 by salbregh      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,50 @@
 # include <stack>
 # include <iostream>
 # include <iterator>
+# include <deque>
 
-template <typename T>
-class		MutantStack : public std::stack<T>
-{
-	public:
-		MutantStack(void) {
-			return ;
-		};
-		MutantStack<T>(const MutantStack<T> &src) {
-			*this = src;
-			return ;
-		};
-		MutantStack<T>&	operator=(const MutantStack<T> &rhs){
-			(void)rhs;
-			return ;
-		};
-		~MutantStack(void) {
-			return ;
-		}
-		
-		typedef typename std::stack<T>::container_type::iterator	iterator;
-		iterator begin(void) {
-			return (this->c.begin());
-		}
-		iterator end(void) {
-			return (this->c.end());
-		}
+template <class T, class Container = std::deque<T> >
+class MutantStack : public std::stack<T,Container>{
+    public:
+        MutantStack();
+        MutantStack( MutantStack const & src );
+        MutantStack &    operator=( MutantStack const & rhs );
+        ~MutantStack();
 
+        typedef typename std::stack<T, Container>::container_type::iterator iterator;
+        
+        iterator begin() {
+            return (this->c.begin());
+        }
+        iterator end() {
+            return (this->c.end());
+        }
 };
+        
+template <class T, class Container>
+MutantStack<T, Container>::MutantStack() : std::stack<T, Container>()
+{
+    return;
+}
+template <class T, class Container>
+MutantStack<T, Container>::MutantStack(MutantStack const & src) :
+std::stack<T, Container>(src)
+{
+    return ;
+}
+
+template <class T, class Container>
+MutantStack<T, Container> &    MutantStack<T, Container>::operator=(MutantStack const &rhs)
+{
+    if (this != &rhs)
+        std::stack<T, Container>::operator=(rhs);
+    return(*this);
+}
+
+template <class T, class Container>
+MutantStack<T, Container>::~MutantStack()
+{
+    return;
+}
 
 #endif
